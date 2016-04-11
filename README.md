@@ -1,2 +1,2 @@
 # cckonex
-Ciudad Cultural Konex App
+Ciudad Cultural Konex App.
