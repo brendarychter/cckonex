@@ -1,0 +1,207 @@
+/*First page*/
+.first-page {
+  background: url("../img/resources/landing1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed; }
+  .first-page .btns-log-in {
+    padding: 50px 20px;
+    height: 50%;
+    width: 92%;
+    float: left; }
+    .first-page .btns-log-in .btn-login {
+      width: 100%;
+      height: 12%;
+      margin-bottom: 3%;
+      border: none;
+      color: #FFFFFF;
+      font-size: 14px;
+      font-family: "Avenir Next" !important; }
+      .first-page .btns-log-in .btn-login:focus {
+        background-color: #FFFFFF;
+        color: #191919; }
+    .first-page .btns-log-in .log-in-app a {
+      background-color: transparent;
+      border: 1px solid #FFFFFF;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      width: 99.5%;
+      display: inline-block;
+      text-align: center;
+      padding-top: 1.5%;
+      height: 25px; }
+    .first-page .btns-log-in .btn-fb {
+      background-color: #39579B;
+      cursor: pointer; }
+      .first-page .btns-log-in .btn-fb:focus {
+        color: #39579B; }
+    .first-page .btns-log-in .btn-google {
+      background-color: #DF4A32; 
+      cursor: pointer; }
+      .first-page .btns-log-in .btn-google:focus {
+        color: #DF4A32; }
+    .first-page .btns-log-in .btn-fb:focus, .first-page .btns-log-in .btn-google:focus {
+      background-color: #FFFFFF; }
+    .first-page .btns-log-in .input-app {
+      background-color: #191919;
+      border: 0.8px solid #C4C4C4;
+      color: #C4C4C4;
+      width: 99%; }
+    .first-page .btns-log-in .btn-pass {
+      margin-bottom: 6%; }
+    .first-page .btns-log-in .btn-user {
+      margin-bottom: 0; }
+    .first-page .btns-log-in .option-login {
+      width: 100%;
+      color: #FFFFFF;
+      height: 5%;
+      text-align: center; }
+  .first-page .register {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    text-align: center;
+    color: #BABABA; 
+    background-color: transparent;
+    border: 0; }
+    .first-page .register span {
+      color: #FFF;
+      font-weight: bold; }
+
+.second-page .events-billboard {
+  padding: 20px;
+  background: url("../img/resources/onda_vaga.jpg");
+  width: 100%;
+  height: 38%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative; }
+  .second-page .events-billboard span, .second-page .events-billboard button {
+    text-transform: uppercase;
+    color: #C4C4C4;
+    display: block;
+    font-size: 19px; }
+  .second-page .events-billboard div {
+    padding-left: 20px; }
+  .second-page .events-billboard .event-now span:first-child {
+    line-height: 12px; }
+  .second-page .events-billboard .event-now span:nth-child(2) {
+    letter-spacing: 1.5px; }
+  .second-page .events-billboard .event-now .show {
+    font-weight: bold; }
+  .second-page .events-billboard .event-later {
+    position: absolute;
+    bottom: 20px; }
+    .second-page .events-billboard .event-later span {
+      color: #FFFFFF; }
+      .second-page .events-billboard .event-later span:first-child {
+        font-size: 15px; }
+      .second-page .events-billboard .event-later span:first-child, .second-page .events-billboard .event-later span:nth-child(2) {
+        display: inline-block; }
+      .second-page .events-billboard .event-later span:nth-child(2) {
+        font-size: 24px; }
+    .second-page .events-billboard .event-later .on-scene {
+      letter-spacing: 2px;
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 30px; }
+    .second-page .events-billboard .event-later button {
+      border: 1px solid #FFFFFF;
+      background-color: transparent; }
+    .second-page .events-billboard .event-later .detail-event {
+      width: 45%;
+      margin-bottom: 3%;
+      border: 2px solid #FFFFFF;
+      color: #FFFFFF;
+      padding: 2px;
+      text-align: center;
+      font-size: 14px;
+      margin-top: 3%; }
+      .second-page .events-billboard .event-later .detail-event:focus {
+        background-color: #FFFFFF;
+        color: #191919; }
+.second-page .konex-options {
+  width: 100%;
+  height: 30%; }
+  .second-page .konex-options ul {
+    list-style-type: none;
+    background-color: transparent;
+    float: left;
+    position: relative;
+    padding: 5%;
+    width: 100%;
+    margin: 0; }
+    .second-page .konex-options ul li {
+      width: 44%;
+      margin-right: 3%;
+      background-color: transparent;
+      float: left;
+      font-size: 15px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      font-weight: bold;
+      letter-spacing: 1.2px;
+      text-align: center;
+      padding-bottom: 15px; }
+      .second-page .konex-options ul li span {
+        position: absolute;
+        bottom: 10px; }
+    .second-page .konex-options ul .landing-option img {
+      height: 100%;
+      width: 100%; }
+
+.third-page .detail-tickets {
+  padding: 20px;
+  background: url("../img/resources/onda_vaga.jpg");
+  width: 100%;
+  height: 38%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative; }
+
+body {
+  font-family: "Avenir Next" !important; }
+  body a {
+    text-decoration: none;
+    color: #FFF !important; }
+
+.app-page {
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #191919;
+  background-size: cover;
+  position: fixed; }
+  .app-page .menu-bar {
+    height: 7.5%;
+    background-color: #2D2D2D;
+    position: relative; }
+    .app-page .menu-bar .burger-button {
+      color: #C4C4C4;
+      width: 10%;
+      float: left;
+      font-size: 2.5em;
+      padding-left: 3%; }
+    .app-page .menu-bar .search-button {
+      background: url("../img/resources/search.png");
+      background-repeat: no-repeat;
+      width: 13%;
+      height: 100%;
+      float: right;
+      top: 6px;
+      right: 0;
+      position: absolute; }
+    .app-page .menu-bar .back-button {
+      background: url("../img/resources/back.png");
+      background-repeat: no-repeat;
+      width: 13%;
+      height: 100%;
+      float: left;
+      top: 6px;
+      position: absolute;
+      left: 10px; }
+
+/*# sourceMappingURL=main.css.map */
