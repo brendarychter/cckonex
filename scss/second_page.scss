@@ -96,6 +96,7 @@
 			    letter-spacing: 1.2px;
 			    text-align: center;
 			    padding-bottom: 15px;
+			    cursor: pointer;
 				span{
 					position: absolute;
 					bottom: 10px;
@@ -109,3 +110,18 @@
 	}
 }
 
+#page-2{
+	#menu-panel{
+		ul{
+			li{
+				text-transform: uppercase;
+			}
+			#log-out-app{
+				position: absolute;
+				bottom: -150px;
+				margin-bottom: 0;
+				width: 79%;
+			}
+		}
+	}
+}

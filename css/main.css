@@ -31,13 +31,11 @@
       padding-top: 1.5%;
       height: 25px; }
     .first-page .btns-log-in .btn-fb {
-      background-color: #39579B;
-      cursor: pointer; }
+      background-color: #39579B; }
       .first-page .btns-log-in .btn-fb:focus {
         color: #39579B; }
     .first-page .btns-log-in .btn-google {
-      background-color: #DF4A32; 
-      cursor: pointer; }
+      background-color: #DF4A32; }
       .first-page .btns-log-in .btn-google:focus {
         color: #DF4A32; }
     .first-page .btns-log-in .btn-fb:focus, .first-page .btns-log-in .btn-google:focus {
@@ -61,7 +59,7 @@
     bottom: 15px;
     width: 100%;
     text-align: center;
-    color: #BABABA; 
+    color: #BABABA;
     background-color: transparent;
     border: 0; }
     .first-page .register span {
@@ -142,25 +140,78 @@
       font-weight: bold;
       letter-spacing: 1.2px;
       text-align: center;
-      padding-bottom: 15px; }
+      padding-bottom: 15px;
+      cursor: pointer; }
       .second-page .konex-options ul li span {
         position: absolute;
         bottom: 10px; }
     .second-page .konex-options ul .landing-option img {
-      height: 100%;
-      width: 100%; }
+      width: 100%;
+      height: 100%; }
+
+#page-2 #menu-panel ul li {
+  text-transform: uppercase; }
+#page-2 #menu-panel ul #log-out-app {
+  position: absolute;
+  bottom: -150px;
+  margin-bottom: 0;
+  width: 79%; }
 
 .third-page .detail-tickets {
   padding: 20px;
   background: url("../img/resources/onda_vaga.jpg");
-  width: 100%;
   height: 38%;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative; }
+  position: relative;
+  text-shadow: none;
+  text-transform: uppercase;
+  color: #FFF; }
+  .third-page .detail-tickets #event-now-buy {
+    text-align: center;
+    display: block;
+    position: absolute;
+    width: 90%;
+    bottom: 22px; }
+    .third-page .detail-tickets #event-now-buy .evt-title {
+      display: block;
+      font-size: 36px;
+      font-weight: bold; }
+    .third-page .detail-tickets #event-now-buy .price {
+      display: block;
+      font-size: 32px;
+      font-weight: 500;
+      margin-bottom: 10px; }
+    .third-page .detail-tickets #event-now-buy .buy-tickets {
+      border: 1px solid #FFF;
+      padding: 10px; }
+    .third-page .detail-tickets #event-now-buy .share-actions {
+      width: 50px;
+      position: absolute;
+      right: -24px;
+      bottom: -18px; }
+
+#page-3 #event-info li {
+  width: 25%;
+  text-transform: uppercase; }
+  #page-3 #event-info li a {
+    font-weight: normal; }
+#page-3 #description-band {
+  padding: 2%;
+  text-shadow: none;
+  color: #FFF;
+  font-family: Avenir next !important; }
+  #page-3 #description-band span {
+    text-transform: uppercase;
+    color: #FF8A60;
+    font-family: Avenir next !important;
+    font-size: 11px;
+    text-align: center;
+    display: block; }
 
 body {
-  font-family: "Avenir Next" !important; }
+  font-family: "Avenir Next" !important;
+  text-shadow: none; }
   body a {
     text-decoration: none;
     color: #FFF !important; }
@@ -179,29 +230,23 @@ body {
     height: 7.5%;
     background-color: #2D2D2D;
     position: relative; }
-    .app-page .menu-bar .burger-button {
-      color: #C4C4C4;
-      width: 10%;
-      float: left;
-      font-size: 2.5em;
-      padding-left: 3%; }
-    .app-page .menu-bar .search-button {
-      background: url("../img/resources/search.png");
-      background-repeat: no-repeat;
-      width: 13%;
-      height: 100%;
-      float: right;
-      top: 6px;
-      right: 0;
+  .app-page #user_photo_container {
+    overflow: hidden;
+    height: 200px;
+    position: relative;
+    margin: 0px auto;
+    width: 100%; }
+    .app-page #user_photo_container #user_photo {
+      width: 100%;
+      top: 50%;
+      margin-top: -75%;
       position: absolute; }
-    .app-page .menu-bar .back-button {
-      background: url("../img/resources/back.png");
-      background-repeat: no-repeat;
-      width: 13%;
-      height: 100%;
-      float: left;
-      top: 6px;
+    .app-page #user_photo_container span {
       position: absolute;
-      left: 10px; }
+      left: 0;
+      width: 100%;
+      text-transform: uppercase;
+      text-align: center;
+      bottom: 0; }
 
 /*# sourceMappingURL=main.css.map */
