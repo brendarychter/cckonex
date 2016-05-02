@@ -1,0 +1,31 @@
+#page-4{
+	font-family: "Avenir Next" !important;
+	.header-4{
+		span{
+			line-height: 40px;
+			padding-left: 20px;
+			text-transform: uppercase;
+		}
+	}
+	.content-4{
+		.event-data{
+			text-transform: uppercase;
+			color: #FFF;
+			text-shadow: none;
+			.title{
+				color: #FF8A60;
+			}
+		}
+		span{
+			text-transform: uppercase;
+			text-shadow: none;
+			color: #FF8A60;
+		}
+		input{
+			background-color: #191919;
+			-webkit-border-radius: 0px;
+-moz-border-radius: 0px;
+border-radius: 0px;
+		}
+	}
+}

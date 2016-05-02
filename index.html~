@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Ciudad Cultural Konex</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        
+       <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+        
+		<script src="js/jquery-1.12.2.min.js"></script>
+		<script src="js/jquery.mobile-1.4.5.min.js"></script>
+		<script src="js/app.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+	    <!-- START PAGE 1 -->
+
+        <div class="background-konex app-page first-page" data-role="page" id="page-1">
+        	<!--<div data-role="header">-->
+        	<div class="btns-log-in" data-role="none" data-disabled="false">
+	        	<button class="btn-login btn-fb" data-role="none">Iniciar sesi&oacute;n con Facebook</button>
+	        	<button class="btn-login btn-google" data-role="none">Iniciar sesi&oacute;n con Google</button>
+		        <div class="option-login btn-login" data-role="none">
+		        	o
+		        </div>
+				<input class="btn-login btn-user input-app" type="text" placeholder="Usuario" data-role="none">
+	        	<input class="btn-login btn-pass input-app" type="text" placeholder="Contrase&ntilde;a" data-role="none">
+	        	<span class="btn-login log-in-app" ><a href="#page-2" data-transition="slide">Iniciar sesi&oacute;n</a></span>
+        	</div>
+        	<div data-role="footer" class="register">
+        		&#191;No ten&eacute;s cuenta&#63; <span><a href="#">Registrate</a></span>
+        	</div>
+	    </div>
+	    <!-- END PAGE 1 -->
+
+	    <!-- START PAGE 2 -->
+	    <div data-role="page" class="jqm-demos ui-responsive-panel app-page second-page" id="page-2" data-url="page-2">
+	    	<div data-role="header" data-enhance="false" data-theme="b">
+		        <a href="#menu-panel" data-icon="bars" data-iconpos="notext"></a>
+				<button id="search-info" data-icon="search" data-iconpos="notext"></button>
+		    </div>
+		    <div data-role="panel" data-display="overlay" data-theme="b" id="menu-panel">
+	        	<ul data-role="listview">
+					<div id="user_photo_container">
+						<img src="img/resources/user_photo.jpg" alt=""id="user_photo" ><span>Brenda</span>
+					</div>
+	                <li data-icon="calendar"><a href="#">Mis reservas</a></li>
+	                <li data-icon="bullets"><a href="#">Mis listas</a></li>
+	                <li data-icon="heart"><a href="#">Mi agenda</a></li>
+	                <li data-icon="camera"><a href="#">Galer&iacute;a</a></li>
+	            	<li data-icon="delete"><a href="#" data-rel="close" id="log-out-app">Cerrar sesi&oacute;n</a></li>
+		        </ul>
+		    </div><!-- /panel -->
+	    	<div class="events-billboard">
+	    		<div class="event-now">
+	    			<span>Ahora</span>
+	    			<span class="show">Teatro ciego</span>
+	    		</div>
+	    		<div class="event-later">
+	    			<span>M&aacute;s tarde</span>&nbsp;&nbsp;<span>22:30</span>
+	    			<span class="on-scene">Onda vaga</span>
+	    			<span class="detail-event" ><a href="#page-3" data-transition="slide">Ver evento</a></span>
+	    		</div>
+	    	</div>
+	    	<div class="konex-options">
+	    		<ul>
+	    			<li class="landing-option"><img src="img/resources/eventos.png"><span><!--Eventos--></span></li>
+	    			<li class="landing-option"><img src="img/resources/beneficios.png"><span><!--Beneficios--></span></li>
+	    			<li class="landing-option"><img src="img/resources/kids.png"><span><!--Knx kids--></span></li>
+	    			<li class="landing-option"><img src="img/resources/comunidad.png"><span><!--Comunidad knx--></span></li>
+	    			<li class="landing-option"><img src="img/resources/salas.png"><span><!--Alquiler de salas--></span></li>
+	    			<li class="landing-option"><img src="img/resources/mas.png"><span><!--Descubr&iacute; m&aacute;s--></span></li>
+	    		</ul>
+	    	</div>
+	    </div>
+	    <!--	    <div class="app-page third-page" id="page-3" data-role="page" id="map-page" data-url="map-page">
+			    <div data-role="header" data-theme="a">
+			    <h1>Maps</h1>
+			    </div>
+			    <div role="main" class="ui-content" id="map-canvas">
+			    </div>
+	    </div>-->
+	    <!-- END PAGE 2 -->
+
+	    <!-- START PAGE 3 -->
+
+	    <div class="app-page third-page jqm-demos ui-responsive-panel" id="page-3" data-role="page">
+		    <div data-role="header" data-enhance="false" data-theme="b" style="height: 40px;">
+			    <a href="#page-2" href="#page-2" data-icon="arrow-l" data-iconpos="notext" data-rel="back" ></a>
+				<button id="search-info" data-icon="search" data-iconpos="notext"></button>
+			</div>
+	    	<div class="detail-tickets">
+				<div id="event-now-buy">
+	    			<span class="evt-title">Onda vaga</span>
+	    			<span>S&aacute;bado 22:30-hs</span>&nbsp;&nbsp;<span>Sala cubierta</span>
+	    			<span class="price">$95</span>
+	    			<span class="buy-tickets" ><a href="#page-4" data-transition="slide">Comprar entradas</a></span>
+					<div class="share-actions">
+						<button id="search-info" data-icon="star" data-iconpos="notext" data-theme="b"></button>
+						<button id="search-info" data-icon="heart" data-iconpos="notext" data-theme="b"></button>
+					</div>
+	    		</div>
+	    	</div>
+    		<div data-role="navbar" id="event-info">
+			    <ul>
+			        <li><a href="#description-band" class="ui-btn-active" data-theme="b">La banda</a></li>
+			        <li><a href="#photos-band" data-theme="b">Fotos</a></li>
+			    </ul>
+			</div>
+			<div id="description-band" data-role="main">
+				<p>Con siete a&ntilde;os de historia, la banda ya tiene en su haber tres discos de estudio: <b>Fuerte y caliente</b>, <b>Esp&iacute;ritu salvaje</b> y <b>Magma elemental</b>, que la consagraron en la escena local, cuatro giras europeas y la consagraci&oacute;n como banda revelaci&oacute;n en el festival Fuji Rock de Jap&oacute;n.</p>
+				<p>La banda se present&oacute; ante m&aacute;s de 10 mil personas y fue destacada por Billboard por su energ&iacute;a en el escenario y la aceptaci&oacute;n del p&uacute;blico</p>
+				<span>Una onda vaga recorre el planeta, un movimiento sin forma, un propio de tango alegre</span>
+			</div>
+			<div id="photos-band" data-role="main">
+				
+			</div>
+
+	    </div>
+	    <!-- END PAGE 3 -->
+	    <!-- START PAGE 4 -->
+
+	    <div class="app-page third-page jqm-demos ui-responsive-panel" id="page-4" data-role="page">
+	    	<div data-role="header" data-enhance="false" data-theme="b" style="height: 40px;">
+			    <a href="#page-3" href="#page-2" data-icon="arrow-l" data-iconpos="notext" data-rel="back" ></a>
+				<button id="search-info" data-icon="search" data-iconpos="notext"></button>
+			</div>
+	    </div>
+	    <!-- END PAGE 4 -->
+
+    </body>
+</html>

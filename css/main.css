@@ -153,7 +153,7 @@
   text-transform: uppercase; }
 #page-2 #menu-panel ul #log-out-app {
   position: absolute;
-  bottom: -150px;
+  bottom: -255px;
   margin-bottom: 0;
   width: 79%; }
 
@@ -208,6 +208,28 @@
     font-size: 11px;
     text-align: center;
     display: block; }
+
+#page-4 {
+  font-family: "Avenir Next" !important; }
+  #page-4 .header-4 span {
+    line-height: 40px;
+    padding-left: 20px;
+    text-transform: uppercase; }
+  #page-4 .content-4 .event-data {
+    text-transform: uppercase;
+    color: #FFF;
+    text-shadow: none; }
+    #page-4 .content-4 .event-data .title {
+      color: #FF8A60; }
+  #page-4 .content-4 span {
+    text-transform: uppercase;
+    text-shadow: none;
+    color: #FF8A60; }
+  #page-4 .content-4 input {
+    background-color: #191919;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px; }
 
 body {
   font-family: "Avenir Next" !important;
