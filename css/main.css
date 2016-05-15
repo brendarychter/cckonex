@@ -72,7 +72,7 @@
   padding: 20px;
   background: url("../img/resources/onda_vaga.jpg");
   width: 100%;
-  height: 38%;
+  height: 32%;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative; }
@@ -165,7 +165,7 @@
 .third-page .detail-tickets {
   padding: 20px;
   background: url("../img/resources/onda_vaga.jpg");
-  height: 38%;
+  height: 32%;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -261,6 +261,8 @@
     margin-bottom: 10px;
     color: #FFF;
     box-shadow: none; }
+  #page-4 .content-4 .data-to-send .fix-margin .ui-input-text {
+    margin-top: -37px; }
   #page-4 .content-4 .data-to-send .mail .ui-input-text {
     width: 96.5%;
     margin: 1%;
@@ -347,7 +349,9 @@
 #page-5 .reserva-ticket {
   padding: 10px; }
   #page-5 .reserva-ticket p {
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    text-align: center;
+    color: #CCC; }
   #page-5 .reserva-ticket p, #page-5 .reserva-ticket span {
     color: #FFF;
     text-shadow: none; }

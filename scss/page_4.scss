@@ -58,6 +58,11 @@
 				color: #FFF;
 				box-shadow: none;
 			}
+			.fix-margin{
+				.ui-input-text{
+					margin-top: -37px;
+				}
+			}
 			.mail{
 				.ui-input-text{
 					width: 96.5%;

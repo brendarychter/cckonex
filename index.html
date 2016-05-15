@@ -51,7 +51,7 @@
 	    <!-- END PAGE 1 -->
 
 	    <!-- START PAGE 2 -->
-	    <div data-role="page" class="jqm-demos ui-responsive-panel app-page second-page" id="page-2" data-url="page-2">
+	   	<div data-role="page" class="jqm-demos ui-responsive-panel app-page second-page" id="page-2" data-url="page-2">
 	    	<div data-role="header" data-enhance="false" data-theme="b">
 		        <a href="#menu-panel" data-icon="bars" data-iconpos="notext"></a>
 				<button id="search-info" data-icon="search" data-iconpos="notext"></button>
@@ -136,10 +136,12 @@
 				</div>
 				<form class="data-to-send">
 					<span class="personal-data">Datos personales</span>
-	    			<input type="text" name="name" id="user-name" value="" placeholder="Nombre" data-corners="false" class="input-normal"/>
-	    			<input type="text" name="lastname" id="user-lastname" value="" placeholder="Apellido" data-corners="false" class="input-normal"/>
-	    			<input type="text" name="dni" id="dni" value="" placeholder="DNI" data-corners="false" class="input-normal"/>
-	    			<input type="text" name="phone-number" id="phone-number" value="" placeholder="Celular" data-corners="false" class="input-normal"/>
+					<input type="text" name="name" id="user-name" value="" placeholder="Nombre" data-corners="false"/>
+					<input type="text" name="lastname" id="credit-card-code" value="" placeholder="Apellido" data-corners="false"/>
+					
+					<input type="text" name="dni" id="user-name" value="" placeholder="DNI" data-corners="false"/>
+					<input type="text" name="phone-number" id="phone-number" value="" placeholder="Celular" data-corners="false"/>
+
 					<div class="mail">
 	    				<input type="text" name="mail" id="mail" value="" placeholder="Mail" data-corners="false" style="width: 100%"/>
 					</div>
@@ -165,7 +167,7 @@
 						<span class="personal-data">Entradas</span>
 
 						<input type="text" name="amount" id="amount" value="" placeholder="Cantidad" data-corners="false"/>
-						<label class="location">&nbsp;&nbsp;&nbsp;Ubicaci&oacute;n sin numerar</label></br>
+						<label class="location">&nbsp;&nbsp;&nbsp;Ubicaci&oacute;n sin numerar</label>
 						<label>
 					        <input data-theme="b" type="radio" name="radio-choice-1" id="retirar" checked>Retirar
 					    </label>
@@ -189,8 +191,8 @@
 				<img class="ticket" src="img/resources/ticket.png" alt=""
 			</div>
 			<div class="reserva-ticket">
-				<p>&iexcl;La reserva se ha efectuado exitosamente!</p>
-				<span>Present&aacute; este c&oacute;digo en tu boleter&iacute;a m&aacute;s cercana y retir&aacute; tu entrada.</span></br>
+				<p>&iexcl;Tu reserva se ha efectuado exitosamente!</p>
+				<span>Present&aacute; este c&oacute;digo en tu boleter&iacute;a m&aacute;s cercana y retir&aacute; tu entrada.</span></br></br>
 		    	<div class="event-data">
 					<div class="title">Onda vaga</div>
 					<div class="hour">S&aacute;bado 22:30 hs</div>&nbsp;&nbsp;
@@ -198,7 +200,7 @@
 					<div class="location">1 entrada</div>
 					<div class="price">Precio: <span>$95</span></div>
 				</div>
-				<button data-theme="b" class="return"><a href="#page-2" data-transition="slide">Volver al inicio</a></button>
+				<button data-theme="b" class="return"><a href="#page-2" data-transition="pop">Volver al inicio</a></button>
 			</div>
 	    </div>
 	    <!-- END PAGE 5 -->
