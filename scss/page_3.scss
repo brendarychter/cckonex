@@ -42,25 +42,22 @@
 }
 
 #page-3{
-	#event-info{
-		li{
-			width: 25%;
-			text-transform: uppercase;
-			a{
-				font-weight: normal;
-			}
-		}
-	}
-
 	#description-band{
+		h3{
+			text-transform: uppercase;
+		    font-weight: bold;
+		    margin-top: 0;
+		    background-color: #FF8A60;
+		    display: inline-block;
+		    margin: 0;
+		    padding: 5px;
+		}
 		padding: 2%;
 		text-shadow: none;
 		color: #FFF;
-		font-family: Avenir next !important;
 		span{
 			text-transform: uppercase;
 			color: #FF8A60;
-			font-family: Avenir next !important;
 			font-size: 11px;
 			text-align: center;
 			display: block;

@@ -1,12 +1,19 @@
-@import 'first_page';
-@import 'second_page';
-@import 'third_page';
+@import 'page_1';
+@import 'page_2';
+@import 'page_3';
 @import 'page_4';
+@import 'page_5';
 
 
-body{
-	font-family: "Avenir Next" !important;
+@font-face {
+	font-family: 'Avenir Next';
+	src: url("../fonts/AvenirLTStd-Medium.otf") format("opentype"); /* File to be stored at your site */
 	text-shadow: none;
+}
+body{
+	span, input{
+		text-shadow: none;
+	}
 	a{
 		text-decoration: none;
 		color: #FFF !important;

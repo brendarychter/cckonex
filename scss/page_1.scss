@@ -6,7 +6,7 @@
 	position: fixed;
 
 	.btns-log-in{
-		padding: 50px 20px;
+		padding: 12% 5%;
 		height: 50%;
 		width: 92%;
 		float: left;
@@ -17,7 +17,7 @@
 			border: none;
 			color: #FFFFFF;
 			font-size: 14px;
-			font-family: "Avenir Next" !important;
+			text-shadow: none;
 			&:focus{
 				background-color: #FFFFFF;
 				color: #191919;
@@ -28,11 +28,11 @@
 			border: 1px solid #FFFFFF;
 			text-transform: uppercase;
 			letter-spacing: 1.2px;
-			width: 99.5%;
+			width: 98.5%;
 		    display: inline-block;
 		    text-align: center;
 		    padding-top: 1.5%;
-		    height: 25px;
+		    height: 22px;
 		}
 		.btn-fb{
 			background-color: #39579B;
@@ -55,7 +55,8 @@
 			background-color: #191919;
 			border: 0.8px solid #C4C4C4;
 			color: #C4C4C4;
-			width: 99%;
+			width: 97%;
+			padding-left: 5px;
 		}
 		.btn-pass{
 			margin-bottom: 6%;
@@ -78,6 +79,7 @@
     	color: #BABABA;
     	background-color: transparent;
     	border: 0;
+    	text-shadow: none;
     	span{
     		color: #FFF;
     		font-weight: bold;

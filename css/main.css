@@ -5,7 +5,7 @@
   background-size: cover;
   position: fixed; }
   .first-page .btns-log-in {
-    padding: 50px 20px;
+    padding: 12% 5%;
     height: 50%;
     width: 92%;
     float: left; }
@@ -16,7 +16,7 @@
       border: none;
       color: #FFFFFF;
       font-size: 14px;
-      font-family: "Avenir Next" !important; }
+      text-shadow: none; }
       .first-page .btns-log-in .btn-login:focus {
         background-color: #FFFFFF;
         color: #191919; }
@@ -25,11 +25,11 @@
       border: 1px solid #FFFFFF;
       text-transform: uppercase;
       letter-spacing: 1.2px;
-      width: 99.5%;
+      width: 98.5%;
       display: inline-block;
       text-align: center;
       padding-top: 1.5%;
-      height: 25px; }
+      height: 22px; }
     .first-page .btns-log-in .btn-fb {
       background-color: #39579B; }
       .first-page .btns-log-in .btn-fb:focus {
@@ -44,7 +44,8 @@
       background-color: #191919;
       border: 0.8px solid #C4C4C4;
       color: #C4C4C4;
-      width: 99%; }
+      width: 97%;
+      padding-left: 5px; }
     .first-page .btns-log-in .btn-pass {
       margin-bottom: 6%; }
     .first-page .btns-log-in .btn-user {
@@ -61,7 +62,8 @@
     text-align: center;
     color: #BABABA;
     background-color: transparent;
-    border: 0; }
+    border: 0;
+    text-shadow: none; }
     .first-page .register span {
       color: #FFF;
       font-weight: bold; }
@@ -81,10 +83,12 @@
     font-size: 19px; }
   .second-page .events-billboard div {
     padding-left: 20px; }
-  .second-page .events-billboard .event-now span:first-child {
-    line-height: 12px; }
-  .second-page .events-billboard .event-now span:nth-child(2) {
-    letter-spacing: 1.5px; }
+  .second-page .events-billboard .event-now span {
+    text-shadow: none; }
+    .second-page .events-billboard .event-now span:first-child {
+      line-height: 12px; }
+    .second-page .events-billboard .event-now span:nth-child(2) {
+      letter-spacing: 1.5px; }
   .second-page .events-billboard .event-now .show {
     font-weight: bold; }
   .second-page .events-billboard .event-later {
@@ -128,7 +132,8 @@
     position: relative;
     padding: 5%;
     width: 100%;
-    margin: 0; }
+    margin: 0;
+    padding-bottom: 0; }
     .second-page .konex-options ul li {
       width: 44%;
       margin-right: 3%;
@@ -141,21 +146,21 @@
       letter-spacing: 1.2px;
       text-align: center;
       padding-bottom: 15px;
-      cursor: pointer; }
+      cursor: pointer;
+      position: relative; }
       .second-page .konex-options ul li span {
         position: absolute;
-        bottom: 10px; }
+        bottom: 10px;
+        left: 0;
+        top: 55px;
+        display: inline-block;
+        width: 100%; }
     .second-page .konex-options ul .landing-option img {
       width: 100%;
       height: 100%; }
 
 #page-2 #menu-panel ul li {
   text-transform: uppercase; }
-#page-2 #menu-panel ul #log-out-app {
-  position: absolute;
-  bottom: -255px;
-  margin-bottom: 0;
-  width: 79%; }
 
 .third-page .detail-tickets {
   padding: 20px;
@@ -191,52 +196,182 @@
       right: -24px;
       bottom: -18px; }
 
-#page-3 #event-info li {
-  width: 25%;
-  text-transform: uppercase; }
-  #page-3 #event-info li a {
-    font-weight: normal; }
 #page-3 #description-band {
   padding: 2%;
   text-shadow: none;
-  color: #FFF;
-  font-family: Avenir next !important; }
+  color: #FFF; }
+  #page-3 #description-band h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 0;
+    background-color: #FF8A60;
+    display: inline-block;
+    margin: 0;
+    padding: 5px; }
   #page-3 #description-band span {
     text-transform: uppercase;
     color: #FF8A60;
-    font-family: Avenir next !important;
     font-size: 11px;
     text-align: center;
     display: block; }
 
-#page-4 {
-  font-family: "Avenir Next" !important; }
-  #page-4 .header-4 span {
-    line-height: 40px;
-    padding-left: 20px;
-    text-transform: uppercase; }
-  #page-4 .content-4 .event-data {
-    text-transform: uppercase;
-    color: #FFF;
-    text-shadow: none; }
-    #page-4 .content-4 .event-data .title {
-      color: #FF8A60; }
+#page-4 .header-4 span {
+  line-height: 40px;
+  padding-left: 20px;
+  text-transform: uppercase;
+  font-weight: normal; }
+#page-4 .content-4 {
+  padding: 15px; }
   #page-4 .content-4 span {
     text-transform: uppercase;
     text-shadow: none;
     color: #FF8A60; }
+  #page-4 .content-4 .event-data {
+    text-transform: uppercase;
+    color: #FFF;
+    text-shadow: none;
+    padding-bottom: 10px; }
+    #page-4 .content-4 .event-data .title {
+      color: #FF8A60;
+      font-size: 28px;
+      font-weight: bold; }
+    #page-4 .content-4 .event-data .hour, #page-4 .content-4 .event-data .location, #page-4 .content-4 .event-data .price {
+      font-size: 13px;
+      display: inline-block; }
+    #page-4 .content-4 .event-data .price {
+      display: block; }
+      #page-4 .content-4 .event-data .price span {
+        color: #FFFFFF;
+        font-size: 17px; }
   #page-4 .content-4 input {
     background-color: #191919;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     border-radius: 0px; }
+  #page-4 .content-4 .data-to-send .personal-data {
+    width: 100%;
+    display: inline-block; }
+  #page-4 .content-4 .data-to-send .ui-input-text {
+    width: 47%;
+    display: inline-block;
+    float: left;
+    text-shadow: none;
+    margin: 1%;
+    font-size: 13px;
+    margin-bottom: 10px;
+    color: #FFF;
+    box-shadow: none; }
+  #page-4 .content-4 .data-to-send .mail .ui-input-text {
+    width: 96.5%;
+    margin: 1%;
+    margin-top: -18px;
+    color: #FFF;
+    box-shadow: none; }
+  #page-4 .content-4 .data-to-send .ui-radio {
+    width: 48%;
+    margin-top: 20px;
+    display: inline-block;
+    margin: 0; }
+    #page-4 .content-4 .data-to-send .ui-radio .ui-radio-on, #page-4 .content-4 .data-to-send .ui-radio .ui-radio-off {
+      background-color: #191919;
+      border-color: #191919;
+      width: 100%;
+      padding-top: 7px;
+      font-size: 11px;
+      text-transform: uppercase;
+      display: inline-block;
+      padding-left: 30px; }
+    #page-4 .content-4 .data-to-send .ui-radio .ui-radio-on:after {
+      border-color: #FF8A60; }
+    #page-4 .content-4 .data-to-send .ui-radio .ui-radio-off:after {
+      background-color: #FFF; }
+  #page-4 .content-4 .data-to-send .location {
+    text-shadow: none;
+    text-transform: uppercase;
+    color: #FFF;
+    font-size: 10px;
+    line-height: 40px; }
+  #page-4 .content-4 .data-to-send .ui-select {
+    width: 47%;
+    border-radius: 0;
+    background-color: transparent;
+    float: left;
+    display: inline-block;
+    margin-left: 3px; }
+    #page-4 .content-4 .data-to-send .ui-select .ui-btn {
+      background-color: transparent;
+      border-radius: 0;
+      border: 1px solid #fff;
+      box-shadow: none; }
+  #page-4 .content-4 .data-to-send .buy-ticket {
+    border-radius: 0;
+    background-color: transparent;
+    border: 1px solid #FFF;
+    text-transform: uppercase;
+    height: 36px;
+    padding-top: 7px;
+    font-size: 14px;
+    font-weight: normal;
+    box-shadow: none; }
+  #page-4 .content-4 form span {
+    font-size: 13px; }
 
-body {
-  font-family: "Avenir Next" !important;
+#page-5 .notification {
+  padding: 2px 5px; }
+#page-5 .band {
+  padding-top: 10px; }
+#page-5 .band, #page-5 .ticket {
+  width: 100%;
+  position: relative; }
+#page-5 .ticket {
+  z-index: 2;
+  position: absolute;
+  top: 40px; }
+#page-5 .event-data {
+  text-transform: uppercase;
+  color: #FFF;
+  text-shadow: none;
+  padding-bottom: 10px; }
+  #page-5 .event-data .title {
+    color: #FF8A60;
+    font-size: 28px;
+    font-weight: bold; }
+  #page-5 .event-data .hour, #page-5 .event-data .location, #page-5 .event-data .price {
+    font-size: 13px;
+    display: inline-block; }
+  #page-5 .event-data .price {
+    display: block; }
+    #page-5 .event-data .price span {
+      color: #FFFFFF;
+      font-size: 17px; }
+#page-5 .reserva-ticket {
+  padding: 10px; }
+  #page-5 .reserva-ticket p {
+    text-transform: uppercase; }
+  #page-5 .reserva-ticket p, #page-5 .reserva-ticket span {
+    color: #FFF;
+    text-shadow: none; }
+#page-5 .return {
+  border-radius: 0;
+  background-color: transparent;
+  border: 1px solid #FFF;
+  text-transform: uppercase;
+  height: 36px;
+  padding-top: 7px;
+  font-size: 14px;
+  font-weight: normal;
+  box-shadow: none; }
+
+@font-face {
+  font-family: 'Avenir Next';
+  src: url("../fonts/AvenirLTStd-Medium.otf") format("opentype");
+  /* File to be stored at your site */
   text-shadow: none; }
-  body a {
-    text-decoration: none;
-    color: #FFF !important; }
+body span, body input {
+  text-shadow: none; }
+body a {
+  text-decoration: none;
+  color: #FFF !important; }
 
 .app-page {
   padding: 0;

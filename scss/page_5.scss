@@ -1,0 +1,60 @@
+#page-5{
+	.notification{
+		padding: 2px 5px;
+	}
+	.band{
+		padding-top: 10px;
+	}
+	.band, .ticket{
+		width: 100%;
+		position: relative;
+	}
+	.ticket{
+		z-index: 2;
+		position: absolute;
+		top: 40px;
+	}
+	.event-data{
+		text-transform: uppercase;
+		color: #FFF;
+		text-shadow: none;
+		padding-bottom: 10px;
+		.title{
+			color: #FF8A60;
+			font-size: 28px;
+			font-weight: bold;
+		}
+		.hour, .location, .price{
+			font-size: 13px;
+			display: inline-block;
+		}
+		.price{
+			display: block;
+			span{
+				color: #FFFFFF;
+				font-size: 17px;
+			}
+		}
+	}
+	.reserva-ticket{
+		padding: 10px;
+		p{
+			text-transform: uppercase;
+		}
+		p, span{
+			color: #FFF;
+			text-shadow: none;
+		}
+	}
+	.return{
+		border-radius: 0;
+		background-color: transparent;
+		border: 1px solid #FFF;
+		text-transform: uppercase;
+		height: 36px;
+	    padding-top: 7px;
+	    font-size: 14px;
+	    font-weight: normal;
+	    box-shadow: none;
+	}
+}

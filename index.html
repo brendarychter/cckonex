@@ -30,7 +30,95 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+		
+			    <!-- START PAGE 1 -->
 
+        <div class="background-konex app-page first-page" data-role="page" id="page-1">
+        	<div class="btns-log-in" data-role="none" data-disabled="false">
+	        	<button class="btn-login btn-fb" data-role="none">Iniciar sesi&oacute;n con Facebook</button>
+	        	<button class="btn-login btn-google" data-role="none">Iniciar sesi&oacute;n con Google</button>
+		        <div class="option-login btn-login" data-role="none">
+		        	o
+		        </div>
+				<input class="btn-login btn-user input-app" type="text" placeholder="Usuario" data-role="none">
+	        	<input class="btn-login btn-pass input-app" type="text" placeholder="Contrase&ntilde;a" data-role="none">
+	        	<span class="btn-login log-in-app" ><a href="#page-2" data-transition="slide">Iniciar sesi&oacute;n</a></span>
+        	</div>
+        	<div data-role="footer" class="register">
+        		&#191;No ten&eacute;s cuenta&#63; <span><a href="#">Registrate</a></span>
+        	</div>
+	    </div>
+	    <!-- END PAGE 1 -->
+
+	    <!-- START PAGE 2 -->
+	    <div data-role="page" class="jqm-demos ui-responsive-panel app-page second-page" id="page-2" data-url="page-2">
+	    	<div data-role="header" data-enhance="false" data-theme="b">
+		        <a href="#menu-panel" data-icon="bars" data-iconpos="notext"></a>
+				<button id="search-info" data-icon="search" data-iconpos="notext"></button>
+		    </div>
+		    <div data-role="panel" data-display="overlay" data-theme="b" id="menu-panel">
+	        	<ul data-role="listview">
+					<div id="user_photo_container">
+						<img src="img/resources/user_photo.jpg" alt=""id="user_photo" ><span>Brenda</span>
+					</div>
+	                <li data-icon="calendar"><a href="#">Mis reservas</a></li>
+	                <li data-icon="bullets"><a href="#">Mis listas</a></li>
+	                <li data-icon="heart"><a href="#">Mi agenda</a></li>
+	                <li data-icon="camera"><a href="#">Galer&iacute;a</a></li>
+	            	<li data-icon="delete"><a href="#" data-rel="close" id="log-out-app">Cerrar sesi&oacute;n</a></li>
+		        </ul>
+		    </div>
+	    	<div class="events-billboard">
+	    		<div class="event-now">
+	    			<span>Ahora</span>
+	    			<span class="show">Teatro ciego</span>
+	    		</div>
+	    		<div class="event-later">
+	    			<span>M&aacute;s tarde</span>&nbsp;&nbsp;<span>22:30</span>
+	    			<span class="on-scene">Onda vaga</span>
+	    			<span class="detail-event" ><a href="#page-3" data-transition="slide">Ver evento</a></span>
+	    		</div>
+	    	</div>
+	    	<div class="konex-options">
+	    		<ul>
+	    			<li class="landing-option"><img src="img/resources/eventos.png"><span>Eventos</span></li>
+	    			<li class="landing-option"><img src="img/resources/beneficios.png"><span>Beneficios</span></li>
+	    			<li class="landing-option"><img src="img/resources/kids.png"><span>Knx kids</span></li>
+	    			<li class="landing-option"><img src="img/resources/comunidad.png"><span>Comunidad</span></li>
+	    			<li class="landing-option"><img src="img/resources/salas.png"><span>Alquil&aacute; sala</span></li>
+	    			<li class="landing-option"><img src="img/resources/mas.png"><span>Descubr&iacute; m&aacute;s</span></li>
+	    		</ul>
+	    	</div>
+	    </div>
+	    <!-- END PAGE 2 -->
+
+	    <!-- START PAGE 3 -->
+
+	    <div class="app-page third-page jqm-demos ui-responsive-panel" id="page-3" data-role="page">
+		    <div data-role="header" data-enhance="false" data-theme="b" style="height: 40px;">
+			    <a href="#page-2" href="#page-2" data-icon="arrow-l" data-iconpos="notext" data-rel="back" ></a>
+				<button id="search-info" data-icon="search" data-iconpos="notext"></button>
+			</div>
+	    	<div class="detail-tickets">
+				<div id="event-now-buy">
+	    			<span class="evt-title">Onda vaga</span>
+	    			<span>S&aacute;bado 22:30-hs</span>&nbsp;&nbsp;<span>Sala cubierta</span>
+	    			<span class="price">$95</span>
+	    			<span class="buy-tickets" ><a href="#page-4" data-transition="slide">Comprar entradas</a></span>
+					<div class="share-actions">
+						<button id="search-info" data-icon="star" data-iconpos="notext" data-theme="b"></button>
+						<button id="search-info" data-icon="heart" data-iconpos="notext" data-theme="b"></button>
+					</div>
+	    		</div>
+	    	</div>
+			<div id="description-band" data-role="main">
+				<h3>La banda</h3>
+				<p>Con siete a&ntilde;os de historia, la banda ya tiene en su haber tres discos de estudio: <b>Fuerte y caliente</b>, <b>Esp&iacute;ritu salvaje</b> y <b>Magma elemental</b>, que la consagraron en la escena local, cuatro giras europeas y la consagraci&oacute;n como banda revelaci&oacute;n en el festival Fuji Rock de Jap&oacute;n.</p>
+				<p>La banda se present&oacute; ante m&aacute;s de 10 mil personas y fue destacada por Billboard por su energ&iacute;a en el escenario y la aceptaci&oacute;n del p&uacute;blico</p>
+				<span>Una onda vaga recorre el planeta, un movimiento sin forma, un propio de tango alegre</span>
+			</div>
+	    </div>
+	    <!-- END PAGE 3 -->
 	    <!-- START PAGE 4 -->
 
 	    <div class="app-page third-page jqm-demos ui-responsive-panel" id="page-4" data-role="page">
@@ -42,59 +130,77 @@
 			<div class="content-4">
 				<div class="event-data">
 					<div class="title">Onda vaga</div>
-					<div class="hour">S&aacute;bado 22:30 hs</div>
+					<div class="hour">S&aacute;bado 22:30 hs</div>&nbsp;&nbsp;
 					<div class="location">Sala cubierta</div>
 					<div class="price">Precio: <span>$95</span></div>
 				</div>
-			</div>
-			<form class="content-4">
-				<span>Datos personales</span>
-    			<input type="text" name="name" id="user-name" value="" placeholder="Nombre">
-    			<input type="text" name="lastname" id="user-lastname" value="" placeholder="Apellido">
-    			<input type="text" name="mail" id="mail" value="" placeholder="Correo electr&oacute;nico">
-    			<input type="text" name="dni" id="dni" value="" placeholder="DNI">
-    			<input type="text" name="phone-number" id="phone-number" value="" placeholder="Celular">
-				<span>Forma de pago</span>
-				   <label>
-				        <input data-theme="b" type="radio" name="radio-choice-0" id="comprar" checked>Comprar
-				    </label>
-				    <label>
-				        <input data-theme="b" type="radio" name="radio-choice-0" id="reservar">Reservar
-				    </label>
-				    <select name="select-native-2" id="select-native-2" data-mini="true"  data-theme="b">
-					        <option value="1">Visa</option>
-					        <option value="2">Master Card</option>
-					</select>
-					<input type="text" name="credit-card" id="credit-card" value="" placeholder="N&uacute;mero de tarjeta">
-					<select name="select-native-3" id="select-native-3" data-mini="true"  data-theme="b">
-					        <option value="1" data-mini="true">1</option>
-					        <option value="2" data-mini="true">2</option>
-					</select>
-					<input type="text" name="credit-card-code" id="credit-card-code" value="" placeholder="C&oacute;digo">
-					<select name="select-native-4" id="select-native-4" data-mini="true"  data-theme="b">
+				<form class="data-to-send">
+					<span class="personal-data">Datos personales</span>
+	    			<input type="text" name="name" id="user-name" value="" placeholder="Nombre" data-corners="false" class="input-normal"/>
+	    			<input type="text" name="lastname" id="user-lastname" value="" placeholder="Apellido" data-corners="false" class="input-normal"/>
+	    			<input type="text" name="dni" id="dni" value="" placeholder="DNI" data-corners="false" class="input-normal"/>
+	    			<input type="text" name="phone-number" id="phone-number" value="" placeholder="Celular" data-corners="false" class="input-normal"/>
+					<div class="mail">
+	    				<input type="text" name="mail" id="mail" value="" placeholder="Mail" data-corners="false" style="width: 100%"/>
+					</div>
+					<span>Forma de pago</span><br>
+					    <label>
+					        <input data-theme="b" type="radio" name="radio-choice-0" id="comprar" checked>Comprar
+					    </label>
+					    <label>
+					        <input data-theme="b" type="radio" name="radio-choice-0" id="reservar">Reservar
+					    </label>
+					    <select name="select-native-2" id="select-native-2" data-mini="true"  data-theme="b">
+						        <option value="1">Visa</option>
+						        <option value="2">Master Card</option>
+						</select>
+						<select name="select-native-4" id="select-native-4" data-mini="true"  data-theme="b">
 					        <option value="1" data-mini="true">1 cuota</option>
 					        <option value="2" data-mini="true">3 cuotas</option>
 					        <option value="2" data-mini="true">6 cuotas</option>
-					</select>
-					<span>Entradas</span>
-					<input type="text" name="amount" id="amount" value="" placeholder="Cantidad">
-					<select name="select-native-5" id="select-native-5" data-mini="true"  data-theme="b">
-					        <option value="1" data-mini="true">Sin numerar</option>
-					</select>
-					<span class="price"> Precio</span>
-					<label>
-				        <input data-theme="b" type="radio" name="radio-choice-1" id="retirar" checked>Retirar en punto de venta
-				    </label>
-				    <label>
-				        <input data-theme="b" type="radio" name="radio-choice-1" id="acceder" >Acceder al evento
-				    </label>
-				<button data-theme="b">Comprar</button>
-			</form>
+						</select>
+						<input type="text" name="credit-card" id="credit-card" value="" placeholder="N&uacute;mero de tarjeta" data-corners="false"/>
+						<input type="text" name="credit-card-code" id="credit-card-code" value="" placeholder="C&oacute;digo" data-corners="false"/>
+						
+						<span class="personal-data">Entradas</span>
+
+						<input type="text" name="amount" id="amount" value="" placeholder="Cantidad" data-corners="false"/>
+						<label class="location">&nbsp;&nbsp;&nbsp;Ubicaci&oacute;n sin numerar</label></br>
+						<label>
+					        <input data-theme="b" type="radio" name="radio-choice-1" id="retirar" checked>Retirar
+					    </label>
+					    <label>
+					        <input data-theme="b" type="radio" name="radio-choice-1" id="acceder" >Acceder al evento
+					    </label>
+					<button data-theme="b" class="buy-ticket"><a href="#page-5" data-transition="slide">Comprar</a></button>
+				</form>
+			</div>
 	    </div>
 	    <!-- END PAGE 4 -->
 		
-		<!-- START EVENTOS -->
+		<!-- START PAGE 5 -->
 
-		<!-- END EVENTOS -->
+	    <div class="app-page fifth-page jqm-demos ui-responsive-panel" id="page-5" data-role="page">
+		    <div data-role="header" data-enhance="false" data-theme="b" style="height: 25px;">
+		    	<img class="notification" src="img/resources/logo_cck.png" alt="icon"/>
+			</div>
+			<div class="background-ticket">
+				<img class="band" src="img/resources/photo-ticket.png" alt="">
+				<img class="ticket" src="img/resources/ticket.png" alt=""
+			</div>
+			<div class="reserva-ticket">
+				<p>&iexcl;La reserva se ha efectuado exitosamente!</p>
+				<span>Present&aacute; este c&oacute;digo en tu boleter&iacute;a m&aacute;s cercana y retir&aacute; tu entrada.</span></br>
+		    	<div class="event-data">
+					<div class="title">Onda vaga</div>
+					<div class="hour">S&aacute;bado 22:30 hs</div>&nbsp;&nbsp;
+					<div class="location">Sala cubierta</div>
+					<div class="location">1 entrada</div>
+					<div class="price">Precio: <span>$95</span></div>
+				</div>
+				<button data-theme="b" class="return"><a href="#page-2" data-transition="slide">Volver al inicio</a></button>
+			</div>
+	    </div>
+	    <!-- END PAGE 5 -->
     </body>
 </html>
