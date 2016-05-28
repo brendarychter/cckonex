@@ -25,15 +25,28 @@
 		</script> 
 		<script src="js/jquery.mobile-1.4.5.min.js"></script>
 		<script src="js/app.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+			    $("#traer").click(function(){
+			        $.getJSON("http://localhost/cckonex/listaeventos.php", function(resultados){
+			        	for (var i = 0; i < resultados.length; i++){
+				            $.each(resultados[i], function(i, campo){
+				                console.log(campo)
+				            });
+			        	}
+			        });
+			    });
+			});
+		</script>
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 		
-			    <!-- START PAGE 1 -->
+		<!-- START PAGE 1 -->
 
-        <div class="background-konex clase1asdads juanma app-page first-page" data-role="page" id="page-1">
+        <div class="background-konex app-page first-page" data-role="page" id="page-1">
         	<div class="btns-log-in" data-role="none" data-disabled="false">
 	        	<button class="btn-login btn-fb" data-role="none">Iniciar sesi&oacute;n con Facebook</button>
 	        	<button class="btn-login btn-google" data-role="none">Iniciar sesi&oacute;n con Google</button>
@@ -47,6 +60,7 @@
         	<div data-role="footer" class="register">
         		&#191;No ten&eacute;s cuenta&#63; <span><a href="#">Registrate</a></span>
         	</div>
+        	<button id="traer">Traer</button>
 	    </div>
 	    <!-- END PAGE 1 -->
 
@@ -81,7 +95,7 @@
 	    	</div>
 	    	<div class="konex-options">
 	    		<ul>
-	    			<li class="landing-option"><img src="img/resources/eventos.png"><span>Eventos</span></li>
+	    			<li class="landing-option"><a href="#page-events" data-transition="slide"><img src="img/resources/eventos.png"><span>Eventos</span></a></li>
 	    			<li class="landing-option"><img src="img/resources/beneficios.png"><span>Beneficios</span></li>
 	    			<li class="landing-option"><img src="img/resources/kids.png"><span>Knx kids</span></li>
 	    			<li class="landing-option"><img src="img/resources/comunidad.png"><span>Comunidad</span></li>
@@ -91,6 +105,26 @@
 	    	</div>
 	    </div>
 	    <!-- END PAGE 2 -->
+
+	    <!-- START PAGE 2/b -->
+	    
+	    <!-- Event Selection list -->
+        <div class="jqm-demos ui-responsive-panel app-page " data-role="page" id="page-events">
+        	<div data-role="header" data-enhance="false" data-theme="b">
+		        <a href="#menu-panel" data-icon="bars" data-iconpos="notext"></a>
+				<button id="search-info" data-icon="search" data-iconpos="notext"></button>
+		    </div>
+        	<div class="konex-options">
+	    		<ul>
+	    			<li>
+	    				<span>Nombre</span>
+	    				<span>$ Precio</span>
+	    				<span>Día y hora</span>
+	    			</li>
+	    		</ul>
+	    	</div>
+	    </div>
+	    <!-- END PAGE 2/b -->
 
 	    <!-- START PAGE 3 -->
 
