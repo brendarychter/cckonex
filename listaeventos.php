@@ -1,12 +1,13 @@
 <?php
 	//database connection
+	//("mysql.hostinger.com.ar", "u341454716_knx", "982451n-", "u341454716_knx")
 	if( $link = mysqli_connect("localhost", "root", "", "Knx")){
 		$consulta = "SELECT * FROM Eventos";	
 		$response = mysqli_query($link, $consulta);
 		//Converting data to json format
 		$matriz = array();
 		while($obj = mysqli_fetch_object($response)){
-			$matriz[] = array('ID' => $obj->id_event, 'P' => utf8_encode($obj->event_name));
+			$matriz[] = array('id_event' => $obj->id_event, 'event_name' => utf8_encode($obj->event_name), 'price' => $obj->price, 'location' => utf8_encode($obj->location), 'description' => utf8_encode($obj->description), 'sub_description' => utf8_encode($obj->description_2), 'date_time' => $obj->date_time);
 		}
 		$datos = json_encode(array_values($matriz));
 		echo /*"items".*/$datos;

@@ -366,6 +366,12 @@
   font-weight: normal;
   box-shadow: none; }
 
+#page-events .header-events span {
+  line-height: 40px;
+  padding-left: 20px;
+  text-transform: uppercase;
+  font-weight: normal; }
+
 @font-face {
   font-family: 'Avenir Next';
   src: url("../fonts/AvenirLTStd-Medium.otf") format("opentype");
