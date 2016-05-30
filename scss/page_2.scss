@@ -35,17 +35,21 @@
 		.event-later{
 			position: absolute;
 			bottom: 20px;
+			color: #FFFFFF;
+			text-shadow: none;
 			span{
 				color: #FFFFFF;
-				&:first-child{
-					font-size: 15px;
-				}
 				&:first-child, &:nth-child(2){
 					display: inline-block;
 				}
-				&:nth-child(2){
-					font-size: 24px;
-				}
+			}
+			.day_next_event{
+				line-height: 12px;
+				font-size: 18px;
+			}
+			.hour_next_event{
+				display: inline-block;
+				font-size: 24px;
 			}
 			.on-scene{
 				letter-spacing: 2px;
@@ -69,6 +73,9 @@
 			    &:focus{
 					background-color: #FFFFFF;
 					color: #191919;
+				}
+				#show-next-event{
+					display: block;
 				}
 
 			}

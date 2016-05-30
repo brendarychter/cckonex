@@ -7,7 +7,7 @@
 		//Converting data to json format
 		$matriz = array();
 		while($obj = mysqli_fetch_object($response)){
-			$matriz[] = array('id_event' => $obj->id_event, 'event_name' => utf8_encode($obj->event_name), 'price' => $obj->price, 'location' => utf8_encode($obj->location), 'description' => utf8_encode($obj->description), 'sub_description' => utf8_encode($obj->description_2), 'date_time' => $obj->date_time);
+			$matriz[] = array('id_event' => $obj->id_event, 'photo' => utf8_encode($obj->photo), 'event_name' => utf8_encode($obj->event_name), 'price' => $obj->price, 'location' => utf8_encode($obj->location), 'description' => utf8_encode($obj->description), 'sub_description' => utf8_encode($obj->description_2), 'date_time' => $obj->date_time);
 		}
 		$datos = json_encode(array_values($matriz));
 		echo /*"items".*/$datos;

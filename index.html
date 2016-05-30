@@ -71,13 +71,13 @@
 		    </div>
 	    	<div class="events-billboard">
 	    		<div class="event-now">
-	    			<span>Ahora</span>
-	    			<span class="show">Teatro ciego</span>
+	    			<span>Pr&oacute;ximo evento</span>
+	    			<!--<span class="show">Teatro ciego</span>-->
 	    		</div>
 	    		<div class="event-later">
-	    			<span>M&aacute;s tarde</span>&nbsp;&nbsp;<span class="hour_next_event">22:30</span>
-	    			<span class="on-scene">Onda vaga</span>
-	    			<span class="detail-event" ><a href="#page-3" data-transition="slide">Ver evento</a></span>
+	    			<span></span><span class="day_next_event"></span>&nbsp;&nbsp;&nbsp;<span class="hour_next_event"></span>hs.
+	    			<span class="on-scene"></span>
+	    			<span class="detail-event" ><a href="#page-3" data-transition="slide" id="show-next-event" class="show-next-event">Ver evento</a></span>
 	    		</div>
 	    	</div>
 	    	<div class="konex-options">
@@ -117,10 +117,10 @@
 			</div>
 	    	<div class="detail-tickets">
 				<div id="event-now-buy">
-	    			<span class="evt-title">Onda vaga</span>
-	    			<span>S&aacute;bado 22:30-hs</span>&nbsp;&nbsp;<span>Sala cubierta</span>
-	    			<span class="price">$95</span>
-	    			<span class="buy-tickets" ><a href="#page-4" data-transition="slide">Comprar entradas</a></span>
+	    			<span class="evt-title" id="event-title-detail"></span>
+	    			<span id="date-time-detail"></span>&nbsp;&nbsp;<span id="location-detail"></span>
+	    			<span class="price" id="price-detail">$</span>
+	    			<span class="buy-tickets" ><a href="#page-4" data-transition="slide" id="buy_tickets">Comprar entradas</a></span>
 					<div class="share-actions">
 						<button id="search-info" data-icon="star" data-iconpos="notext" data-theme="b"></button>
 						<button id="search-info" data-icon="heart" data-iconpos="notext" data-theme="b"></button>
@@ -128,10 +128,9 @@
 	    		</div>
 	    	</div>
 			<div id="description-band" data-role="main">
-				<h3>La banda</h3>
-				<p>Con siete a&ntilde;os de historia, la banda ya tiene en su haber tres discos de estudio: <b>Fuerte y caliente</b>, <b>Esp&iacute;ritu salvaje</b> y <b>Magma elemental</b>, que la consagraron en la escena local, cuatro giras europeas y la consagraci&oacute;n como banda revelaci&oacute;n en el festival Fuji Rock de Jap&oacute;n.</p>
-				<p>La banda se present&oacute; ante m&aacute;s de 10 mil personas y fue destacada por Billboard por su energ&iacute;a en el escenario y la aceptaci&oacute;n del p&uacute;blico</p>
-				<span>Una onda vaga recorre el planeta, un movimiento sin forma, un propio de tango alegre</span>
+				<h3>M&aacute;s info</h3>
+				<p id="principal-description-detail"></p>
+				<span id="sub-description-detail">Una onda vaga recorre el planeta, un movimiento sin forma, un propio de tango alegre</span>
 			</div>
 	    </div>
 	    <!-- END PAGE 3 -->
@@ -145,10 +144,10 @@
 			</div>
 			<div class="content-4">
 				<div class="event-data">
-					<div class="title">Onda vaga</div>
-					<div class="hour">S&aacute;bado 22:30 hs</div>&nbsp;&nbsp;
-					<div class="location">Sala cubierta</div>
-					<div class="price">Precio: <span>$95</span></div>
+					<div class="title" id="title-checkout"></div>
+					<div class="hour" id="hour-checkout"></div>&nbsp;&nbsp;
+					<div class="location" id="location-checkout"></div>
+					<div class="price">Precio: <span id="price-checkout">$</span></div>
 				</div>
 				<form class="data-to-send">
 					<span class="personal-data">Datos personales</span>
@@ -204,7 +203,7 @@
 			</div>
 			<div class="background-ticket">
 				<img class="band" src="img/resources/photo-ticket.png" alt="">
-				<img class="ticket" src="img/resources/ticket.png" alt=""
+				<img class="ticket" src="img/resources/ticket.png" alt="">
 			</div>
 			<div class="reserva-ticket">
 				<p>&iexcl;Tu reserva se ha efectuado exitosamente!</p>
