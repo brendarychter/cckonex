@@ -78,5 +78,13 @@ $(document).ready(function(){
             $('#location-checkout').append(next_event.location);
             $('#price-checkout').append(next_event.price);
         })
+
+        //Thanks information
+        $('#buy-ticket-checkout').on('click', function(){
+            $('#title-thanks').append(next_event.event_name);
+            $('#hour-thanks').append(next_event.day + '-' + next_event.month + '   ' + next_event.hour);
+            $('#location-thanks').append(next_event.location);
+            $('#price-thanks').append(next_event.price);
+        })
     });
 });
