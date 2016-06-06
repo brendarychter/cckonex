@@ -48,16 +48,30 @@ $(document).ready(function(){
             return next;
         }
 
+        function orderByDay(){
+            resultados.sort(function(a,b){
+              // Turn your strings into dates, and then subtract them
+              // to get a value that is either negative, positive, or zero.
+              return new Date(a.date_time) - new Date(b.date_time);
+            });
+            return resultados;
+        }
         function getEventList(){
+            resultados = orderByDay();
             for (var i = 0; i < resultados.length; i++){
                 var obj = resultados[i];
-                
-                $("#lista").append("<a href='#page-3' class='click-list event-title-detail' event-number='"+ obj.id_event+"'><div id=event-"+obj.id_event+"><div class='hour'>"+ obj.hour+"</div>"+obj.event_name+"</div></a>")
+                var color;
+                if (i % 2 == 0){
+                    color = "#DDDDDD";
+                }else{
+                    color = "#C3C2C1";
+                }
+                $("#lista").append("<a href='#page-3' class='click-list' event-number='"+ obj.id_event+"'><div class='container' style=background-color:"+color+" ><div class='hour' id=event-"+obj.id_event+">"+ obj.day+'-'+obj.month + '</br>' + obj.hour+ "</div><span>"+obj.event_name+"</span></div></a>")
                 
                 /*$.each(resultados[i], function(i, campo){
                     $("#lista").append("<p>" + campo + " </p>");
                 });*/
-            }            
+            }
         }
         function setFirstInfoNextEvent(next_event){
             //Current information
@@ -84,7 +98,8 @@ $(document).ready(function(){
         }
 
         $('.click-list').on('click', function(){
-            selectEventById(parseInt($(this).attr('event-number')));
+            selectEventById(parseInt($(this).attr('event-number'))-1);
+            //$('#lista').empty();
         });
         
         function setCheckoutEvent(next_event){
@@ -96,6 +111,18 @@ $(document).ready(function(){
         //Checkout information
         $('#buy_tickets').on('click', function(){
             setCheckoutEvent(next_event);
+        })
+
+        function setThanksEvent(next_event){
+            $('#title-thanks').append(next_event.event_name);
+            $('#hour-thanks').append(next_event.day + '-' + next_event.month + '   ' + next_event.hour);
+            $('#location-thanks').append(next_event.location);
+            $('#price-thanks').append(next_event.price);
+        }
+
+        $('#thanks-redirect').on('click', function(){
+            setThanksEvent(next_event);
+            next_event = {};
         })
     })
 
