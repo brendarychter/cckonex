@@ -34,7 +34,7 @@
 		
 		<!-- START PAGE 1 -->
 
-        <!--<div class="background-konex app-page first-page" data-role="page" id="page-1">
+        <div class="background-konex app-page first-page" data-role="page" id="page-1">
         	<div class="btns-log-in" data-role="none" data-disabled="false">
 	        	<button class="btn-login btn-fb" data-role="none">Iniciar sesi&oacute;n con Facebook</button>
 	        	<button class="btn-login btn-google" data-role="none">Iniciar sesi&oacute;n con Google</button>
@@ -48,7 +48,7 @@
         	<div data-role="footer" class="register">
         		&#191;No ten&eacute;s cuenta&#63; <span><a href="#">Registrate</a></span>
         	</div>
-	    </div>-->
+	    </div>
 	    <!-- END PAGE 1 -->
 
 	    <!-- START PAGE 2 -->
@@ -189,7 +189,7 @@
 					    <label>
 					        <input data-theme="b" type="radio" name="radio-choice-1" id="acceder" >Acceder al evento
 					    </label>
-					<button data-theme="b" class="buy-ticket"><a href="#page-5" data-transition="slide">Comprar</a></button>
+					<button data-theme="b" id="buy-ticket-checkout"><a href="#page-5" data-transition="slide">Comprar</a></button>
 				</form>
 			</div>
 	    </div>
@@ -209,11 +209,11 @@
 				<p>&iexcl;Tu reserva se ha efectuado exitosamente!</p>
 				<span>Present&aacute; este c&oacute;digo en tu boleter&iacute;a m&aacute;s cercana y retir&aacute; tu entrada.</span></br></br>
 		    	<div class="event-data">
-					<div class="title">Onda vaga</div>
-					<div class="hour">S&aacute;bado 22:30 hs</div>&nbsp;&nbsp;
-					<div class="location">Sala cubierta</div>
-					<div class="location">1 entrada</div>
-					<div class="price">Precio: <span>$95</span></div>
+					<div class="title" id="title-thanks"></div>
+					<div class="hour" id="hour-thanks"></div>&nbsp;&nbsp;
+					<div class="location" id="location-thanks"></div>
+					<!--<div class="location" id="title-thanks"></div>-->
+					<div class="price">Precio: <span id="price-thanks">$</span></div>
 				</div>
 				<button data-theme="b" class="return"><a href="#page-2" data-transition="pop">Volver al inicio</a></button>
 			</div>
