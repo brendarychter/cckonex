@@ -118,6 +118,8 @@ $(document).ready(function(){
             $('#hour-thanks').append(next_event.day + '-' + next_event.month + '   ' + next_event.hour);
             $('#location-thanks').append(next_event.location);
             $('#price-thanks').append(next_event.price);
+            //con información del recital y del usuario
+            $('#qrcode').qrcode(Math.random().toString());
         }
 
         $('#thanks-redirect').on('click', function(){
