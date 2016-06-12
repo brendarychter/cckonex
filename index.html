@@ -153,7 +153,7 @@
 					<div class="location" id="location-checkout"></div>
 					<div class="price">Precio: <span id="price-checkout">$</span></div>
 				</div>
-				<form class="data-to-send">
+				<form class="data-to-send" id="purchase-ticket-form">
 					<span class="personal-data">Datos personales</span>
 					<input type="text" name="name" id="user-name" value="" placeholder="Nombre" data-corners="false"/>
 					<input type="text" name="lastname" id="credit-card-code" value="" placeholder="Apellido" data-corners="false"/>
@@ -165,12 +165,12 @@
 	    				<input type="text" name="mail" id="mail" value="" placeholder="Mail" data-corners="false" style="width: 100%"/>
 					</div>
 					<span>Forma de pago</span><br>
-					    <label>
+					    <!--<label>
 					        <input data-theme="b" type="radio" name="radio-choice-0" id="comprar" checked>Comprar
 					    </label>
 					    <label>
 					        <input data-theme="b" type="radio" name="radio-choice-0" id="reservar">Reservar
-					    </label>
+					    </label>-->
 					    <select name="select-native-2" id="select-native-2" data-mini="true"  data-theme="b">
 						        <option value="1">Visa</option>
 						        <option value="2">Master Card</option>
@@ -188,12 +188,12 @@
 						<input type="text" name="amount" id="amount" value="" placeholder="Cantidad" data-corners="false"/>
 						<label class="location">&nbsp;&nbsp;&nbsp;Ubicaci&oacute;n sin numerar</label>
 						<label>
-					        <input data-theme="b" type="radio" name="radio-choice-1" id="retirar" checked>Retirar
+					        <input data-theme="b" type="radio" name="access-radio" value="retirar">Retirar
 					    </label>
 					    <label>
-					        <input data-theme="b" type="radio" name="radio-choice-1" id="acceder" >Acceder al evento
+					        <input data-theme="b" type="radio" name="access-radio" value="acceder" >Acceder al evento
 					    </label>
-					<button data-theme="b" id="buy-ticket-checkout"><a href="#page-5" data-transition="slide" id="thanks-redirect">Comprar</a></button>
+					<button data-theme="b" id="thanks-redirect"><a href="#page-5" data-transition="slide">Comprar</a></button>
 				</form>
 			</div>
 	    </div>
@@ -205,14 +205,10 @@
 		    <div data-role="header" data-enhance="false" data-theme="b" style="height: 25px;">
 		    	<img class="notification" src="img/resources/logo_cck.png" alt="icon"/>
 			</div>
-			<div class="background-ticket">
-				<img class="band" src="img/resources/photo-ticket.png" alt="">
-				<img class="ticket" src="img/resources/ticket.png" alt="">
-			</div>
 			<div class="reserva-ticket">
 				<p>&iexcl;Tu reserva se ha efectuado exitosamente!</p>
 				<div id="qrcode"></div>
-				<span>Present&aacute; este c&oacute;digo en tu boleter&iacute;a m&aacute;s cercana y retir&aacute; tu entrada.</span></br></br>
+				<span id="description-thanks"></span></br>
 		    	<div class="event-data">
 					<div class="title" id="title-thanks"></div>
 					<div class="hour" id="hour-thanks"></div>&nbsp;&nbsp;

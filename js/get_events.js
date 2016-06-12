@@ -66,7 +66,7 @@ $(document).ready(function(){
                 }else{
                     color = "#C3C2C1";
                 }
-                $("#lista").append("<a href='#page-3' class='click-list' event-number='"+ obj.id_event+"'><div class='container' style=background-color:"+color+" ><div class='hour' id=event-"+obj.id_event+">"+ obj.day+'-'+obj.month + '</br>' + obj.hour+ "</div><span>"+obj.event_name+"</span></div></a>")
+                $("#lista").append("<a href='#page-3' class='click-list' event-number='"+ i+"'><div class='container' style=background-color:"+color+" ><div class='hour' id=event-"+i+">"+ obj.day+'-'+obj.month + '</br>' + obj.hour+ "</div><span>"+obj.event_name+"</span></div></a>")
                 
                 /*$.each(resultados[i], function(i, campo){
                     $("#lista").append("<p>" + campo + " </p>");
@@ -98,7 +98,8 @@ $(document).ready(function(){
         }
 
         $('.click-list').on('click', function(){
-            selectEventById(parseInt($(this).attr('event-number'))-1);
+            selectEventById(parseInt($(this).attr('event-number')));
+            console.log(parseInt($(this).attr('event-number')));
             //$('#lista').empty();
         });
         
@@ -118,14 +119,25 @@ $(document).ready(function(){
             $('#hour-thanks').append(next_event.day + '-' + next_event.month + '   ' + next_event.hour);
             $('#location-thanks').append(next_event.location);
             $('#price-thanks').append(next_event.price);
-            //con información del recital y del usuario
-            $('#qrcode').qrcode(Math.random().toString());
         }
 
         $('#thanks-redirect').on('click', function(){
             setThanksEvent(next_event);
             next_event = {};
+            var info = $('input[name=access-radio]:checked', '#purchase-ticket-form').val(); 
+            showThanksInformation(info);
         })
+
+        function showThanksInformation(data){
+            if (data == "acceder"){
+                console.log("qr");
+                $('#description-thanks').text("¡Presentá este código y accedé directamente al evento sin hacer fila!");
+                //con información del recital y del usuario, por ahora es un número random
+                $('#qrcode').qrcode(Math.random().toString());
+            }else{
+                console.log("mapa");
+            }
+        }
     })
 
 });
