@@ -129,13 +129,16 @@ $(document).ready(function(){
         })
 
         function showThanksInformation(data){
+            console.log(data)
             if (data == "acceder"){
                 console.log("qr");
                 $('#description-thanks').text("¡Presentá este código y accedé directamente al evento sin hacer fila!");
                 //con información del recital y del usuario, por ahora es un número random
                 $('#qrcode').qrcode(Math.random().toString());
+                $('#qrcode').show();
             }else{
                 console.log("mapa");
+                $('#qrcode').hide();
             }
         }
     })

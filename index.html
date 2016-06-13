@@ -30,6 +30,39 @@
 
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 		<script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
+		    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnl9LN8i0ANaQG2lQRYiY6WvIJUKVcJaA&callback=initMap"></script>
+
+    <style type="text/css">
+	    #map{
+	        height: 100%;
+	        width: 100%;
+	    }
+	</style>
+	Z
+<script type="text/javascript">
+	document.addEventListener('deviceready', initMap, false);
+	var map;
+	function initMap() {
+		if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(showPosition);
+		}
+		
+	}
+	function showPosition(position) {
+	    var center = {lat: -34.6052226, lng: -58.4944287}
+		  map = new google.maps.Map(document.getElementById('map'), {
+		    center: {lat: position.coords.latitude, lng: position.coords.longitude},
+		    zoom: 16,
+		    mapTypeId:google.maps.MapTypeId.ROADMAP
+		  });
+		   var marker = new google.maps.Marker(document.getElementById('map'), {
+		   	position: {lat: position.coords.latitude, lng: position.coords.longitude}
+		  });
+
+		marker.setMap(map);
+	}
+</script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -188,7 +221,7 @@
 						<input type="text" name="amount" id="amount" value="" placeholder="Cantidad" data-corners="false"/>
 						<label class="location">&nbsp;&nbsp;&nbsp;Ubicaci&oacute;n sin numerar</label>
 						<label>
-					        <input data-theme="b" type="radio" name="access-radio" value="retirar">Retirar
+					        <input data-theme="b" type="radio" name="access-radio" value="retirar" checked>Retirar
 					    </label>
 					    <label>
 					        <input data-theme="b" type="radio" name="access-radio" value="acceder" >Acceder al evento
@@ -208,6 +241,7 @@
 			<div class="reserva-ticket">
 				<p>&iexcl;Tu reserva se ha efectuado exitosamente!</p>
 				<div id="qrcode"></div>
+        		<div id="map"></div>
 				<span id="description-thanks"></span></br>
 		    	<div class="event-data">
 					<div class="title" id="title-thanks"></div>
