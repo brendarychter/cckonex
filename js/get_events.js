@@ -1,4 +1,19 @@
+/*(navigator.onLine) ? console.log("hay señal") : console.log("no hay") pantalla de no hay conexion y de intentar nuevamente;*/
+//Guardar en localstorage el login así no se tiene que volver a loggear. 
+//si no hay un id en el localstorage, mostrar la pantalla de login (ni bien empieza a usar la app y cuando cierra sesión)
+//si hay algo en localstorage, si hay internet y si no hay internet. (refresco o no)
+//http://docs.phonegap.com/en/1.0.0/phonegap_events_events.md.html
+//document.addEventListener("deviceready", yourCallbackFunction, false);
+
+/*window.addEventListener("load", onDeviceReady, true);
+function onDeviceReady() {
+
+    console.log('hola')
+    $.getJSON("http://localhost/testing/web/listaproductos.php").done(mostrarProductos);
+}*/
 $(document).ready(function(){
+    //Ejecutar sólo cuando se loggea
+    //Redirect del login y signin solo cuando onsuccess
     $.ajax({
         url: "listaeventos.php",
         type: "GET",
@@ -137,8 +152,8 @@ $(document).ready(function(){
                 $('#qrcode').qrcode(Math.random().toString());
                 $('#qrcode').show();
             }else{
+                //data == "retirar"
                 console.log("mapa");
-                $('#qrcode').hide();
             }
         }
     })

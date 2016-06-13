@@ -11,6 +11,11 @@
 		}
 		$datos = json_encode(array_values($matriz));
 		echo /*"items".*/$datos;
+
+
+		//Click button registrar
+		$consulta_login = "SELECT username, pass, FROM usuarios WHERE username = '1', pass = '2'";
+		$consulta_register = "INSERT INTO usuarios (username, pass, mail) VALUES ('1', '2', '3')";
 	}else{
 		echo("no se conecto");
 	}
