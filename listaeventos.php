@@ -1,7 +1,7 @@
 <?php
 	//database connection
 	//("mysql.hostinger.com.ar", "u341454716_knx", "982451n-", "u341454716_knx")
-	if( $link = mysqli_connect("localhost", "root", "", "Knx")){
+	if( $link = mysqli_connect("localhost", "m6000758_cckonex", "lu43seGIza", "m6000758_cckonex")){
 		$consulta = "SELECT * FROM Eventos";	
 		$response = mysqli_query($link, $consulta);
 		//Converting data to json format

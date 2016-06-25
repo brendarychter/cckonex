@@ -15,11 +15,12 @@ $(document).ready(function(){
     //Ejecutar sólo cuando se loggea
     //Redirect del login y signin solo cuando onsuccess
     $.ajax({
-        url: "listaeventos.php",
+        url: "http://blinkapp.com.ar/app_php/listaeventos.php",
         type: "GET",
-        dataType : "json",
+        dataType: "json"
     }).done(function( resultados ) {
         resultados = formatDateAndTime();
+        console.log(resultados);
         var next_event = getNextEvent(0);
         getEventList();
 
@@ -72,7 +73,7 @@ $(document).ready(function(){
             return resultados;
         }
         function getEventList(){
-            resultados = orderByDay();
+            //resultados = orderByDay();
             for (var i = 0; i < resultados.length; i++){
                 var obj = resultados[i];
                 var color;
@@ -156,6 +157,8 @@ $(document).ready(function(){
                 console.log("mapa");
             }
         }
+    }).fail(function( jqXHR, textStatus ) {
+      alert( "Request failed: " + textStatus );
     })
 
 });
