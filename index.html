@@ -51,6 +51,8 @@
     <body>
 		
 		<!-- START PAGE 1 -->
+		<div class="background-konex app-page first-page" data-role="page" id="page-0">
+	    </div>
 
         <div class="background-konex app-page first-page" data-role="page" id="page-1">
         	<div class="btns-log-in" data-role="none" data-disabled="false">
@@ -61,10 +63,11 @@
 		        </div>
 				<form id="loginform">
 	                <div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
-	 					<input class="btn-login btn-user input-app ui-input-text" type="text" id="user_name" value="" placeholder="Usuario" data-role="none" name="user_name">
-	 					<input class="btn-login btn-pass input-app ui-input-text" name="password" value="" id="password" type="password" placeholder="Contrase&ntilde;a" data-role="none" name="password">
+	 					<input class="btn-login btn-user input-app ui-input-text" type="text" id="user_name" placeholder="Usuario" data-role="none" name="user_name">
+	 					<input class="btn-login btn-pass input-app ui-input-text" name="password" id="password" type="password" placeholder="Contrase&ntilde;a" data-role="none" name="password">
 
 	                    <div class="btn-login log-in-app"><a id="submit_login" type="submit" class="ui-btn-hidden" href="">Iniciar sesi&oacute;n</a></div>
+	                    <span id="error-login"></span>
 	                </div>
 	            </form>
         	</div>
@@ -79,7 +82,7 @@
         <div class="background-konex app-page first-page" data-role="page" id="page-sign-in">
         	<div class="btns-log-in" data-role="none" data-disabled="false">
 	        	<form action="sign-in-form">
-					<input class="btn-login btn-user input-app" type="text" placeholder="Usuario" data-role="none">
+					<input class="btn-login btn-pass input-app" type="text" placeholder="Usuario" data-role="none">
 		        	<input class="btn-login btn-pass input-app" type="password" placeholder="Contrase&ntilde;a" data-role="none">
 		        	<input class="btn-login btn-pass input-app" type="password" placeholder="Repetir contrase&ntilde;a" data-role="none">
 		        	<input class="btn-login btn-pass input-app" type="text" placeholder="Mail" data-role="none">

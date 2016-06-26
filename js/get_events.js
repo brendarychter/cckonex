@@ -15,44 +15,86 @@ $(document).ready(function(){
     //Redirect del login y signin solo cuando onsuccess
     console.log(localStorage);
     var user_actual = {};
-    //if (!localStorage.username){
+    if (!localStorage.username && !localStorage.pass){
+        $.mobile.changePage("#page-1");
         console.log("no hay nadie loggeado");
+
+
         $('#submit_login').on('click', function(){
-            localStorage.setItem("username", $("#user_name").val());
-            localStorage.setItem("pass", $("#password").val());
-            //console.log("hizo click");
+            $("#error-login").empty();
+            console.log($("#user_name").val())
+            console.log($("#password").val())
+            if (!$("#user_name").val() || !$("#password").val()){
+                console.log('is empty');
+                $("#user_name").focus();
+                $("#error-login").append("-Revise los datos ingresados-");
+            }else{
+                localStorage.setItem("username", $("#user_name").val());
+                localStorage.setItem("pass", $("#password").val());
+                //console.log("hizo click");
 
-            var formData = $("#loginform").serialize();
-  
-            $.ajax({
-                url: "php/connection.php",
-                type: "POST",
-                cache: false,
-                data: formData,
-                dataType: "json"
-            }).done(function( usuario ) {
-                console.log(usuario);
-                $.mobile.changePage("#page-2");
-                user_actual = usuario[0];
-                refreshNextEvent();
-                $('#username_menu').append(user_actual.username);
-                $('#user_photo').css('background-image', 'url(http://blinkapp.com.ar/app_html/images/' + user_actual.user_photo + ')');
-                loadEventsLandingPage();
-            })
+                var formData = $("#loginform").serialize();
+      
+                $.ajax({
+                    url: "php/connection.php",
+                    type: "POST",
+                    cache: false,
+                    data: formData,
+                    dataType: "json"
+                }).done(function( usuario ) {
+                    user_actual = usuario[0];
+                    if(user_actual == undefined){
+                        $("#user_name").val('');
+                        $("#password").val('');
+                        $("#user_name").focus();
+                        $("#error-login").append("-El usuario ingresado no existe-");
+                        localStorage.clear();
+                    }else{
+                        $.mobile.changePage("#page-2");
+                        refreshNextEvent();
+                        $('#username_menu').append(user_actual.username);
+                        $('#user_photo').css('background-image', 'url(http://blinkapp.com.ar/app_html/images/' + user_actual.user_photo + ')');
+                        loadEventsLandingPage();
+                    }
+                }).fail(function( jqXHR, textStatus ) {
+                  alert( "Request failed: " + textStatus );
+                })
+                $("#error-login").empty();
+            }
         })
-    /*}else{
+    }else{
         console.log("redirect to landing page");
-    }*/
+        $.mobile.changePage("#page-2");
+        getUserData();
+    }
 
+    function getUserData(){
+        var formData = "user_name="+localStorage.getItem("username")+"&password="+localStorage.getItem("pass")+"";
+        $.ajax({
+            url: "php/connection.php",
+            type: "POST",
+            cache: false,
+            data: formData,
+            dataType: "json"
+        }).done(function( usuario ) {
+            console.log(usuario);
+            $.mobile.changePage("#page-2");
+            user_actual = usuario[0];
+            refreshNextEvent();
+            $('#username_menu').append(user_actual.username);
+            $('#user_photo').css('background-image', 'url(http://blinkapp.com.ar/app_html/images/' + user_actual.user_photo + ')');
+            loadEventsLandingPage();
+        })
+    }
 
 //CARGAR EVENTOS
     $('#log-out-app').on('click', function(){
-        localStorage.clear();
         $('#user_name').val('');
         $('#password').val('');
         $('#user_photo').empty();
         $('#username_menu').empty();
         refreshNextEvent();
+        localStorage.clear();
     })
     function loadEventsLandingPage(){
         console.log(user_actual);

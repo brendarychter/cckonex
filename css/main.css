@@ -467,4 +467,12 @@ body a {
   font-family: 'Avenir Next';
   font-weight: normal; }
 
+#error-login {
+  display: block;
+  text-transform: uppercase;
+  color: #ddd;
+  margin: 0 auto;
+  font-size: 11px;
+  text-align: center; }
+
 /*# sourceMappingURL=main.css.map */
