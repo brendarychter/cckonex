@@ -24,7 +24,7 @@ $(document).ready(function(){
             var formData = $("#loginform").serialize();
   
             $.ajax({
-                url: "php/connection.php",
+                url: "http://blinkapp.com.ar/app_php/connection.php",
                 type: "POST",
                 cache: false,
                 data: formData,
@@ -52,7 +52,7 @@ $(document).ready(function(){
     function loadEventsLandingPage(){
       $.ajax({
             //"http://blinkapp.com.ar/app_php/listaeventos.php"
-            url: "php/listaeventos.php",
+            url: "http://blinkapp.com.ar/app_php/listaeventos.php",
             type: "POST",
             dataType: "json"
         }).done(function( resultados ) {
