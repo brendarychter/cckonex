@@ -281,7 +281,7 @@
   #page-4 .content-4 .data-to-send .ui-radio {
     width: 48%;
     margin-top: 20px;
-    display: inline-block;
+    display: block;
     margin: 0; }
     #page-4 .content-4 .data-to-send .ui-radio .ui-radio-on, #page-4 .content-4 .data-to-send .ui-radio .ui-radio-off {
       background-color: #1d1d1d;

@@ -20,7 +20,7 @@
 		<script src="js/get_events.js"></script>
 
 		<script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
-		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnl9LN8i0ANaQG2lQRYiY6WvIJUKVcJaA&callback=initialize"></script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnl9LN8i0ANaQG2lQRYiY6WvIJUKVcJaA&callback=initMap"></script>
 
     <style type="text/css">
 	    #map{
@@ -28,24 +28,23 @@
 	    }
 	</style>
 	<script type="text/javascript">
-		document.addEventListener('deviceready', initialize, false);
+		document.addEventListener('deviceready', initMap, false);
 		var map;
-function initialize() 
-{ 
-  // This variable is scoped only for the initialize function,
-  // it is not available to other functions scoped globally
-  var myOptions = 
-  { 
-    center: new google.maps.LatLng(-34.397, 150.644), 
-    zoom: 8, 
-    mapTypeId: google.maps.MapTypeId.ROADMAP 
-  };
-
-  // Instead of a function scoped map variable this should be global
-  map = new google.maps.Map(document.getElementById("map"), myOptions);
-
-  google.maps.event.trigger(map, 'resize') 
-} 
+		function initMap() {
+			if (navigator.geolocation) {
+				navigator.geolocation.getCurrentPosition(showPosition);
+			}
+		}
+		function showPosition(position) {
+			map = new google.maps.Map(document.getElementById('map'), {
+				center: {lat: -34.9761, lng: -58.0972},
+			    zoom: 16
+			});
+			var marker = new google.maps.Marker(document.getElementById('map'), {
+			   	position: {lat: -34.9761, lng: -58.0972}
+			});
+			marker.setMap(map);
+		}
 
 	</script>
     </head>
@@ -253,7 +252,7 @@ function initialize()
 
 	    <div class="app-page fifth-page jqm-demos ui-responsive-panel" id="page-5" data-role="page">
 			<div class="reserva-ticket">
-				<p>&iexcl;Tu reserva se ha efectuado exitosamente!</p>
+				<p>&iexcl;Tu compra se ha efectuado exitosamente!</p>
 				<div id="qrcode"></div>
         		<div id="map"></div>
 				<span id="description-thanks"></span></br>

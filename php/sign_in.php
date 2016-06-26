@@ -8,15 +8,15 @@
  	
 
 	// Create connection
-	$conn = mysqli_connect("localhost", "m6000758_cckonex", "lu43seGIza", "m6000758_cckonex");
+	$conn = mysqli_connect("localhost", "root", "", "Knx");
 	// Check connection
 	if ($conn->connect_error) {
 	    die("Connection failed: " . $conn->connect_error);
 	} 
 
 	$user_sign_in = $_POST["usuario_sign_in"];
-	    	$pass_sign_in = $_POST["password_sign_in"];
-	    	$email_sign_in = $_POST["mail_sign_in"];
+	$pass_sign_in = $_POST["password_sign_in"];
+	$email_sign_in = $_POST["mail_sign_in"];
 
 
 	$sql = "INSERT INTO Usuarios (username, pass, mail)
