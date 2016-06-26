@@ -28,7 +28,7 @@ $(document).ready(function(){
                 console.log(formData);
 
                 $.ajax({
-                    url: "php/sign_in.php",
+                    url: "http://blinkapp.com.ar/app_php/sign_in.php",
                     type: "POST",
                     data: formData
                 }).done(function( message ) {
@@ -57,7 +57,7 @@ $(document).ready(function(){
 
                 var formData = $("#loginform").serialize();
                 $.ajax({
-                    url: "php/connection.php",
+                    url: "http://blinkapp.com.ar/app_php/connection.php",
                     type: "POST",
                     cache: false,
                     data: formData,
@@ -116,7 +116,6 @@ $(document).ready(function(){
         $('#password').val('');
         $('#user_photo').empty();
         $('#username_menu').empty();
-        $('#lista').listview('refresh');
         refreshNextEvent();
         $("#loading").hide();
         $('#error-signin').empty();
@@ -141,7 +140,7 @@ $(document).ready(function(){
         console.log(user_actual);
         $.ajax({
             //"http://blinkapp.com.ar/app_php/listaeventos.php"
-            url: "php/listaeventos.php",
+            url: "http://blinkapp.com.ar/app_php/listaeventos.php",
             type: "POST",
             dataType: "json"
         }).done(function( resultados ) {
@@ -292,7 +291,7 @@ $(document).ready(function(){
                     $('#map').show();
                     
                     $.ajax({
-                            url: "php/directions.php",
+                            url: "http://blinkapp.com.ar/app_php/directions.php",
                             type: "POST",
                             dataType: "json"
                         }).done(function( direccion ) {

@@ -8,7 +8,7 @@
  	
 //localhost", "root", "", "Knx"
 	// Create connection
-	$conn = mysqli_connect("localhost", "root", "", "Knx");
+	$conn = mysqli_connect("localhost", "m6000758_cckonex", "lu43seGIza", "m6000758_cckonex");
 	// Check connection
 	if ($conn->connect_error) {
 	    die("Connection failed: " . $conn->connect_error);
