@@ -4,8 +4,9 @@
  	$user = "m6000758_cckonex";
  	$pass = "lu43seGIza";
  	$bd = "m6000758_cckonex";
+	//if( $link = mysqli_connect("localhost", "m6000758_cckonex", "lu43seGIza", "m6000758_cckonex")){
  	
-	if( $link = mysqli_connect("localhost", "m6000758_cckonex", "lu43seGIza", "m6000758_cckonex")){
+	if( $link = mysqli_connect("localhost", "root", "", "Knx")){
 		$user_name = $_POST["user_name"];
     	$password = $_POST["password"];
      

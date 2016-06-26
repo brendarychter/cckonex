@@ -14,6 +14,7 @@ $(document).ready(function(){
     //Ejecutar sólo cuando se loggea
     //Redirect del login y signin solo cuando onsuccess
     console.log(localStorage);
+    var user_actual = {};
     //if (!localStorage.username){
         console.log("no hay nadie loggeado");
         $('#submit_login').on('click', function(){
@@ -24,7 +25,7 @@ $(document).ready(function(){
             var formData = $("#loginform").serialize();
   
             $.ajax({
-                url: "http://blinkapp.com.ar/app_php/connection.php",
+                url: "php/connection.php",
                 type: "POST",
                 cache: false,
                 data: formData,
@@ -32,11 +33,12 @@ $(document).ready(function(){
             }).done(function( usuario ) {
                 console.log(usuario);
                 $.mobile.changePage("#page-2");
-                var user_actual = usuario[0];
+                user_actual = usuario[0];
+                refreshNextEvent();
                 $('#username_menu').append(user_actual.username);
                 $('#user_photo').css('background-image', 'url(http://blinkapp.com.ar/app_html/images/' + user_actual.user_photo + ')');
+                loadEventsLandingPage();
             })
-            loadEventsLandingPage();
         })
     /*}else{
         console.log("redirect to landing page");
@@ -48,11 +50,15 @@ $(document).ready(function(){
         localStorage.clear();
         $('#user_name').val('');
         $('#password').val('');
+        $('#user_photo').empty();
+        $('#username_menu').empty();
+        refreshNextEvent();
     })
     function loadEventsLandingPage(){
-      $.ajax({
+        console.log(user_actual);
+        $.ajax({
             //"http://blinkapp.com.ar/app_php/listaeventos.php"
-            url: "http://blinkapp.com.ar/app_php/listaeventos.php",
+            url: "php/listaeventos.php",
             type: "POST",
             dataType: "json"
         }).done(function( resultados ) {
@@ -153,8 +159,13 @@ $(document).ready(function(){
                 refreshDataDetail();
                 selectEventById(parseInt($(this).attr('event-number')));
                 console.log(parseInt($(this).attr('event-number')));
+                $('#lista').listview('refresh');
             });
             
+            $('.landing-option').on('click', function(){
+                //$('#lista').listview('refresh');
+            });
+
             function setCheckoutEvent(next_event){
                 $('#title-checkout').append(next_event.event_name);
                 $('#hour-checkout').append(next_event.day + '-' + next_event.month + '   ' + next_event.hour);
@@ -165,6 +176,7 @@ $(document).ready(function(){
             $('#buy_tickets').on('click', function(){
                 refreshDataCheckout();
                 setCheckoutEvent(next_event);
+                $('#mail').val();
             })
 
             function setThanksEvent(next_event){
@@ -203,11 +215,7 @@ $(document).ready(function(){
                 next_event = getNextEvent(0);
             })
 
-            function refreshNextEvent(){
-                $('.on-scene').text('');
-                $('.day_next_event').text('');
-                $('.hour_next_event').text('');
-            }
+
             function refreshDataDetail(){
                 $('.event-title-detail').text('');
                 $('#price-detail').text('');
@@ -233,7 +241,9 @@ $(document).ready(function(){
           alert( "Request failed: " + textStatus );
         })  
     }
-    
-                //$('#lista').listview('refresh');
-
+    function refreshNextEvent(){
+        $('.on-scene').text('');
+        $('.day_next_event').text('');
+        $('.hour_next_event').text('');
+    }
 });
