@@ -118,11 +118,25 @@ $(document).ready(function(){
         $('#username_menu').empty();
         $('#lista').listview('refresh');
         refreshNextEvent();
+        $("#loading").hide();
+        $('#error-signin').empty();
+        $('#mail_sign_in').empty();
+        $('#password_2_sign_in').empty();
+        $('#password_sign_in').empty();
+        $('#usuario_sign_in').empty();
     })
     $('#event-selection').on('click', function(){
         $.mobile.changePage("#page-events");
     })
 
+    $('#register-click').on('click', function(){
+        $("#loading").hide();
+        $('#error-signin').empty();
+        $('#mail_sign_in').empty();
+        $('#password_2_sign_in').empty();
+        $('#password_sign_in').empty();
+        $('#usuario_sign_in').empty();
+    })
     function loadEventsLandingPage(){
         console.log(user_actual);
         $.ajax({
@@ -273,13 +287,62 @@ $(document).ready(function(){
                     $('#qrcode').show();
                 }else{
                     //data == "retirar"
-                    $('#description-thanks').empty();
+                    $('#qrcode').hide();
+                    
                     $('#map').show();
                     
-                    setTimeout(function () {
-                        google.maps.event.trigger(map, 'resize');
-                     }, 50);
-                    $('#qrcode').hide();
+                    $.ajax({
+                            url: "php/directions.php",
+                            type: "POST",
+                            dataType: "json"
+                        }).done(function( direccion ) {
+                            var dir = direccion[0];
+                            $('#description-thanks').text("Retira tus entradas en " + dir.namepoint + " - " + dir.street + " de " + dir.open_time.substring(0, 2) + " a " + dir.close_time.substring(0, 2)); 
+                            if(navigator.geolocation){
+                                navigator.geolocation.getCurrentPosition(function(position){
+
+                                    var locations = [
+                                        [dir.namepoint, dir.latitude,dir.longitude, 2],
+                                        ['Tu ubicación', position.coords.latitude,position.coords.longitude, 1]
+                                    ];
+
+                                    var map = new google.maps.Map(document.getElementById('map'), {
+                                        zoom: 13,
+                                        center: new google.maps.LatLng(position.coords.latitude,position.coords.longitude),
+                                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                                    });
+
+                                    var infowindow = new google.maps.InfoWindow();
+
+                                    var marker, i;
+
+                                    for (i = 0; i < locations.length; i++) {  
+                                      marker = new google.maps.Marker({
+                                        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                                        map: map
+                                      });
+
+                                      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                                        return function() {
+                                          infowindow.setContent(locations[i][0]);
+                                          infowindow.open(map, marker);
+                                        }
+                                      })(marker, i));
+                                    }
+                                }, function(){
+                                    console.log("no share")
+                                    //client supports navigator object, but does not share their geolocation
+                                });
+                            }else{
+                                //client doesn't support the navigator object
+                                console.log("no navigator")
+                            }
+
+
+
+                    })
+                     
+                    
                 }
             }
 
