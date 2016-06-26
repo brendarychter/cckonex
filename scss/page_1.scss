@@ -20,7 +20,7 @@
 			text-shadow: none;
 			&:focus{
 				background-color: #FFFFFF;
-				color: #191919;
+				color: #1d1d1d;
 			}
 		}
 		.log-in-app a{
@@ -52,11 +52,12 @@
 			}
 		}
 		.input-app{
-			background-color: #191919;
+			background-color: #1d1d1d;
 			border: 0.8px solid #C4C4C4;
 			color: #C4C4C4;
 			width: 97%;
 			padding-left: 5px;
+			height: 32px;
 		}
 		.btn-pass{
 			margin-bottom: 6%;

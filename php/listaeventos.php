@@ -1,6 +1,8 @@
 <?php
 	//database connection
+
 	//("mysql.hostinger.com.ar", "u341454716_knx", "982451n-", "u341454716_knx")
+	//if( $link = mysqli_connect("localhost", "m6000758_cckonex", "lu43seGIza", "m6000758_cckonex"))
 	if( $link = mysqli_connect("localhost", "m6000758_cckonex", "lu43seGIza", "m6000758_cckonex")){
 		$consulta = "SELECT * FROM Eventos";	
 		$response = mysqli_query($link, $consulta);
@@ -10,12 +12,8 @@
 			$matriz[] = array('id_event' => $obj->id_event, 'photo' => utf8_encode($obj->photo), 'event_name' => utf8_encode($obj->event_name), 'price' => $obj->price, 'location' => utf8_encode($obj->location), 'description' => utf8_encode($obj->description), 'sub_description' => utf8_encode($obj->description_2), 'date_time' => $obj->date_time);
 		}
 		$datos = json_encode(array_values($matriz));
-		echo /*"items".*/$datos;
+		echo $datos;
 
-
-		//Click button registrar
-		$consulta_login = "SELECT username, pass, FROM usuarios WHERE username = '1', pass = '2'";
-		$consulta_register = "INSERT INTO usuarios (username, pass, mail) VALUES ('1', '2', '3')";
 	}else{
 		echo("no se conecto");
 	}

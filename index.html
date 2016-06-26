@@ -59,12 +59,14 @@
 		        <div class="option-login btn-login" data-role="none">
 		        	o
 		        </div>
-		        <form action="log-in-form" method="post" onsubmit="">
-		        	<input class="btn-login btn-user input-app" type="text" id="user_name" placeholder="Usuario" data-role="none">
-	        		<input class="btn-login btn-pass input-app" id="password" type="password" placeholder="Contrase&ntilde;a" data-role="none">
-	        		<span class="btn-login log-in-app" ><a href="#page-2" data-transition="slide" id="submit" type="submit" >Iniciar sesi&oacute;n</a></span>
-		        </form>
-				
+				<form id="loginform">
+	                <div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+	 					<input class="btn-login btn-user input-app ui-input-text" type="text" id="user_name" value="" placeholder="Usuario" data-role="none" name="user_name">
+	 					<input class="btn-login btn-pass input-app ui-input-text" name="password" value="" id="password" type="password" placeholder="Contrase&ntilde;a" data-role="none" name="password">
+
+	                    <div class="btn-login log-in-app"><a id="submit_login" type="submit" class="ui-btn-hidden" href="">Iniciar sesi&oacute;n</a></div>
+	                </div>
+	            </form>
         	</div>
         	<div data-role="footer" class="register">
         		&#191;No ten&eacute;s cuenta&#63; <span><a href="#page-sign-in">Registrate</a></span>
@@ -99,7 +101,7 @@
 		    <div data-role="panel" data-display="overlay" data-theme="b" id="menu-panel">
 	        	<ul data-role="listview">
 					<div id="user_photo_container">
-						<img src="img/resources/user_photo.jpg" alt=""id="user_photo" ><span>Brenda</span>
+						<div id="user_photo"></div><span id="username_menu"></span>
 					</div>
 	                <li data-icon="calendar"><a href="#">Mis reservas</a></li>
 	                <li data-icon="bullets"><a href="#">Mis listas</a></li>
@@ -157,8 +159,8 @@
 	    	<div class="detail-tickets">
 				<div id="event-now-buy">
 	    			<span class="evt-title event-title-detail"></span>
-	    			<span id="date-time-detail"></span>&nbsp;&nbsp;<span id="location-detail"></span>
-	    			<span class="price" id="price-detail">$</span>
+	    			<span id="date-time-detail"></span>&nbsp;&nbsp;<span id="location-detail"></span></br>
+	    			<span class="price">$</span><span class="price" id="price-detail"></span></br>
 	    			<span class="buy-tickets" ><a href="#page-4" data-transition="slide" id="buy_tickets">Comprar entradas</a></span>
 					<div class="share-actions">
 						<button id="search-info" data-icon="star" data-iconpos="notext" data-theme="b"></button>
@@ -186,7 +188,7 @@
 					<div class="title" id="title-checkout"></div>
 					<div class="hour" id="hour-checkout"></div>&nbsp;&nbsp;
 					<div class="location" id="location-checkout"></div>
-					<div class="price">Precio: <span id="price-checkout">$</span></div>
+					<div class="price">Precio: $<span id="price-checkout"></span></div>
 				</div>
 				<form class="data-to-send" id="purchase-ticket-form">
 					<span class="personal-data">Datos personales</span>
@@ -237,9 +239,9 @@
 		<!-- START PAGE 5 -->
 
 	    <div class="app-page fifth-page jqm-demos ui-responsive-panel" id="page-5" data-role="page">
-		    <div data-role="header" data-enhance="false" data-theme="b" style="height: 25px;">
+		    <!--<div data-role="header" data-enhance="false" data-theme="b" style="height: 25px;">
 		    	<img class="notification" src="img/resources/logo_cck.png" alt="icon"/>
-			</div>
+			</div>-->
 			<div class="reserva-ticket">
 				<p>&iexcl;Tu reserva se ha efectuado exitosamente!</p>
 				<div id="qrcode"></div>
@@ -252,7 +254,7 @@
 					<!--<div class="location" id="title-thanks"></div>-->
 					<div class="price">Precio: <span id="price-thanks">$</span></div>
 				</div>
-				<button data-theme="b" class="return"><a href="#page-2" data-transition="pop">Volver al inicio</a></button>
+				<button data-theme="b" class="return" id="back_to_home"><a href="#page-2" data-transition="pop">Volver al inicio</a></button>
 			</div>
 	    </div>
 	    <!-- END PAGE 5 -->
