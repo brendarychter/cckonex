@@ -20,33 +20,34 @@
 		<script src="js/get_events.js"></script>
 
 		<script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
-		<!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnl9LN8i0ANaQG2lQRYiY6WvIJUKVcJaA&callback=initMap"></script>-->
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnl9LN8i0ANaQG2lQRYiY6WvIJUKVcJaA&callback=initialize"></script>
 
     <style type="text/css">
 	    #map{
-	        height: 100%;
+	        height: 340px;
 	    }
 	</style>
-	<!--<script type="text/javascript">
-		document.addEventListener('deviceready', initMap, false);
+	<script type="text/javascript">
+		document.addEventListener('deviceready', initialize, false);
 		var map;
-		function initMap() {
-			if (navigator.geolocation) {
-				navigator.geolocation.getCurrentPosition(showPosition);
-			}
-		}
-		function showPosition(position) {
-			map = new google.maps.Map(document.getElementById('map'), {
-				center: {lat: position.coords.latitude, lng: position.coords.longitude},
-			    zoom: 16/*,
-			    mapTypeId:google.maps.MapTypeId.ROADMAP*/
-			});
-			var marker = new google.maps.Marker(document.getElementById('map'), {
-			   	position: {lat: position.coords.latitude, lng: position.coords.longitude}
-			});
-			marker.setMap(map);
-		}
-	</script>-->
+function initialize() 
+{ 
+  // This variable is scoped only for the initialize function,
+  // it is not available to other functions scoped globally
+  var myOptions = 
+  { 
+    center: new google.maps.LatLng(-34.397, 150.644), 
+    zoom: 8, 
+    mapTypeId: google.maps.MapTypeId.ROADMAP 
+  };
+
+  // Instead of a function scoped map variable this should be global
+  map = new google.maps.Map(document.getElementById("map"), myOptions);
+
+  google.maps.event.trigger(map, 'resize') 
+} 
+
+	</script>
     </head>
     <body>
 		
@@ -199,22 +200,16 @@
 				</div>
 				<form class="data-to-send" id="purchase-ticket-form">
 					<span class="personal-data">Datos personales</span>
-					<input type="text" name="name" id="user-name-form" value="" placeholder="Nombre" data-corners="false"/>
-					<input type="text" name="lastname" id="credit-card-code" value="" placeholder="Apellido" data-corners="false"/>
+					<input type="text" name="name" name="name-form" id="name-form" value="" placeholder="Nombre" data-corners="false"/>
+					<input type="text" name="lastname" id="lastname" name="lastname"value="" placeholder="Apellido" data-corners="false"/>
 					
 					<input type="text" name="dni" id="dni" value="" placeholder="DNI" data-corners="false"/>
-					<input type="text" name="phone-number" id="phone-number" value="" placeholder="Celular" data-corners="false"/>
+					<input type="text" name="phone-number" id="phone-number" name="phone-number" value="" placeholder="Celular" data-corners="false"/>
 
 					<div class="mail">
-	    				<input type="text" name="mail" id="mail" value="" placeholder="Mail" data-corners="false" style="width: 100%"/>
+	    				<input type="text" name="mail-form" id="mail-form" value="" placeholder="Mail" data-corners="false" style="width: 100%"/>
 					</div>
 					<span>Forma de pago</span><br>
-					    <!--<label>
-					        <input data-theme="b" type="radio" name="radio-choice-0" id="comprar" checked>Comprar
-					    </label>
-					    <label>
-					        <input data-theme="b" type="radio" name="radio-choice-0" id="reservar">Reservar
-					    </label>-->
 					    <select name="select-native-2" id="select-native-2" data-mini="true"  data-theme="b">
 						        <option value="1">Visa</option>
 						        <option value="2">Master Card</option>
@@ -248,7 +243,7 @@
 					    <label>
 					        <input data-theme="b" type="radio" name="access-radio" value="acceder" >Acceder al evento
 					    </label>
-					<button data-theme="b" id="thanks-redirect"><a href="#page-5" data-transition="slide">Comprar</a></button>
+					<div class="btn-login log-in-app"><a href="#page-5" id="thanks-redirect" type="submit" class="ui-btn-hidden" href=""  data-transition="slide">Comprar</a></div>
 				</form>
 			</div>
 	    </div>
@@ -266,7 +261,7 @@
 					<div class="title" id="title-thanks"></div>
 					<div class="hour" id="hour-thanks"></div>&nbsp;&nbsp;
 					<div class="location" id="location-thanks"></div>
-					<div class="entries">Cantidad de entradas: <span id="entries-amount"></span></div>
+					<!--<div class="entries">Cantidad de entradas: <span id="entries-amount"></span></div>-->
 					<div class="price">Precio total: <span id="price-thanks">$</span></div>
 				</div>
 				<button data-theme="b" class="return" id="back_to_home"><a href="#page-2" data-transition="pop">Volver al inicio</a></button>

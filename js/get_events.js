@@ -28,7 +28,7 @@ $(document).ready(function(){
                 console.log(formData);
 
                 $.ajax({
-                    url: "php/sign_in.php",
+                    url: "http://blinkapp.com.ar/app_php/sign_in.php",
                     type: "POST",
                     data: formData
                 }).done(function( message ) {
@@ -92,7 +92,7 @@ $(document).ready(function(){
     function getUserData(){
         var formData = "user_name="+localStorage.getItem("username")+"&password="+localStorage.getItem("pass")+"";
         $.ajax({
-            url: "php/connection.php",
+            url: "http://blinkapp.com.ar/app_php/connection.php",
             type: "POST",
             cache: false,
             data: formData,
@@ -116,6 +116,7 @@ $(document).ready(function(){
         $('#password').val('');
         $('#user_photo').empty();
         $('#username_menu').empty();
+        $('#lista').listview('refresh');
         refreshNextEvent();
     })
     $('#event-selection').on('click', function(){
@@ -126,7 +127,7 @@ $(document).ready(function(){
         console.log(user_actual);
         $.ajax({
             //"http://blinkapp.com.ar/app_php/listaeventos.php"
-            url: "php/listaeventos.php",
+            url: "http://blinkapp.com.ar/app_php/listaeventos.php",
             type: "POST",
             dataType: "json"
         }).done(function( resultados ) {
@@ -268,10 +269,14 @@ $(document).ready(function(){
                     $('#description-thanks').text("¡Presentá este código y accedé directamente al evento sin hacer fila!");
                     //con información del recital y del usuario, por ahora es un número random
                     $('#qrcode').qrcode(Math.random().toString());
+                    $('#map').hide();
                     $('#qrcode').show();
                 }else{
                     //data == "retirar"
-                    console.log("mapa");
+                    $('#description-thanks').empty();
+                    $('#map').show();
+
+                    $('#qrcode').hide();
                 }
             }
 
