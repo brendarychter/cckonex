@@ -18,23 +18,44 @@ $(document).ready(function(){
     if (!localStorage.username && !localStorage.pass){
         $.mobile.changePage("#page-1");
         console.log("no hay nadie loggeado");
+        $('#submit_signin').on('click', function(){
+            $("#error-signin").empty();
+            if (!$("#usuario_sign_in").val() || !$("#password_sign_in").val() || !$("#password_2_sign_in").val() || !$("#mail_sign_in").val()){
+                console.log('is empty');
+                $("#error-signin").append("-Alguno de los campos se encuentra vacío-");
+            }else{
+                var formData = $("#signinform").serialize();
+                console.log(formData);
 
-
+                $.ajax({
+                    url: "php/sign_in.php",
+                    type: "POST",
+                    data: formData
+                }).done(function( message ) {
+                    $("#error-signin").append("-"+message+"-");
+                    $("#loading").show();
+                    setTimeout(function () {
+                            $.mobile.changePage("#page-2");
+                            localStorage.setItem("username", $("#usuario_sign_in").val());
+                            localStorage.setItem("pass", $("#password_sign_in").val());
+                            
+                            $("#error-signin").attr('z-index', '30');
+                            getUserData();
+                     }, 3000);
+                });
+            }
+        })
         $('#submit_login').on('click', function(){
             $("#error-login").empty();
-            console.log($("#user_name").val())
-            console.log($("#password").val())
             if (!$("#user_name").val() || !$("#password").val()){
                 console.log('is empty');
                 $("#user_name").focus();
-                $("#error-login").append("-Revise los datos ingresados-");
+                $("#error-login").append("-Alguno de los campos se encuentra vacío-");
             }else{
                 localStorage.setItem("username", $("#user_name").val());
                 localStorage.setItem("pass", $("#password").val());
-                //console.log("hizo click");
 
                 var formData = $("#loginform").serialize();
-      
                 $.ajax({
                     url: "php/connection.php",
                     type: "POST",
@@ -89,13 +110,18 @@ $(document).ready(function(){
 
 //CARGAR EVENTOS
     $('#log-out-app').on('click', function(){
+        localStorage.clear();
+        $.mobile.changePage("#page-0");
         $('#user_name').val('');
         $('#password').val('');
         $('#user_photo').empty();
         $('#username_menu').empty();
         refreshNextEvent();
-        localStorage.clear();
     })
+    $('#event-selection').on('click', function(){
+        $.mobile.changePage("#page-events");
+    })
+
     function loadEventsLandingPage(){
         console.log(user_actual);
         $.ajax({
@@ -201,7 +227,6 @@ $(document).ready(function(){
                 refreshDataDetail();
                 selectEventById(parseInt($(this).attr('event-number')));
                 console.log(parseInt($(this).attr('event-number')));
-                $('#lista').listview('refresh');
             });
             
             $('.landing-option').on('click', function(){
@@ -217,8 +242,9 @@ $(document).ready(function(){
             //Checkout information
             $('#buy_tickets').on('click', function(){
                 refreshDataCheckout();
+                $('#mail').val(user_actual.mail);
+                $('#user-name-form').focus();
                 setCheckoutEvent(next_event);
-                $('#mail').val();
             })
 
             function setThanksEvent(next_event){

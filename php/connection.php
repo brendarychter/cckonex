@@ -15,7 +15,7 @@
 		//Converting data to json format
 		$matriz = array();
 		while($obj = mysqli_fetch_object($response)){
-			$matriz[] = array('username' => $obj->username, 'password' => $obj->pass, 'user_photo' => utf8_encode($obj->user_photo));
+			$matriz[] = array('username' => $obj->username, 'password' => $obj->pass, 'user_photo' => utf8_encode($obj->user_photo), 'mail' => $obj->mail);
 		}
 		$datos = json_encode(array_values($matriz));
 		echo $datos;

@@ -67,12 +67,12 @@
 	 					<input class="btn-login btn-pass input-app ui-input-text" name="password" id="password" type="password" placeholder="Contrase&ntilde;a" data-role="none" name="password">
 
 	                    <div class="btn-login log-in-app"><a id="submit_login" type="submit" class="ui-btn-hidden" href="">Iniciar sesi&oacute;n</a></div>
-	                    <span id="error-login"></span>
+	                    <span class="error-data-entry" id="error-login"></span>
 	                </div>
 	            </form>
         	</div>
         	<div data-role="footer" class="register">
-        		&#191;No ten&eacute;s cuenta&#63; <span><a href="#page-sign-in">Registrate</a></span>
+        		&#191;No ten&eacute;s cuenta&#63; <span><a href="#page-sign-in" id="register-click">Registrate</a></span>
         	</div>
 	    </div>
 	    <!-- END PAGE 1 -->
@@ -81,14 +81,18 @@
 
         <div class="background-konex app-page first-page" data-role="page" id="page-sign-in">
         	<div class="btns-log-in" data-role="none" data-disabled="false">
-	        	<form action="sign-in-form">
-					<input class="btn-login btn-pass input-app" type="text" placeholder="Usuario" data-role="none">
-		        	<input class="btn-login btn-pass input-app" type="password" placeholder="Contrase&ntilde;a" data-role="none">
-		        	<input class="btn-login btn-pass input-app" type="password" placeholder="Repetir contrase&ntilde;a" data-role="none">
-		        	<input class="btn-login btn-pass input-app" type="text" placeholder="Mail" data-role="none">
-		        	<span class="btn-login log-in-app" ><a href="#page-2" data-transition="slide">Crear cuenta</a></span>
+	        	<form id="signinform">
+	        		<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+						<input class="btn-login btn-pass input-app" type="text" placeholder="Usuario" data-role="none" id="usuario_sign_in" name="usuario_sign_in">
+			        	<input class="btn-login btn-pass input-app" type="password" placeholder="Contrase&ntilde;a" data-role="none" id="password_sign_in" name="password_sign_in">
+			        	<input class="btn-login btn-pass input-app" type="password" placeholder="Repetir contrase&ntilde;a" data-role="none" id="password_2_sign_in" name="password_2_sign_in">
+			        	<input class="btn-login btn-pass input-app" type="text" placeholder="Mail" data-role="none" id="mail_sign_in" name="mail_sign_in">
+			        	<div class="btn-login log-in-app"><a id="submit_signin" type="submit" class="ui-btn-hidden" href="">Crear cuenta</a></div>
+			        	<span class="error-data-entry"  id="error-signin"></span>
+			        </div>
 		       	</form>
         	</div>
+        	<div id="loading"></div>
         	<div data-role="footer" class="register">
         		<span><a href="#page-1">Volver al inicio</a></span>
         	</div>
@@ -126,7 +130,7 @@
 	    	</div>
 	    	<div class="konex-options">
 	    		<ul>
-	    			<li class="landing-option"><a href="#page-events" data-transition="slide"><img src="img/resources/eventos.png"><span>Eventos</span></a></li>
+	    			<li class="landing-option"><a data-transition="slide" id="event-selection"><img src="img/resources/eventos.png"><span>Eventos</span></a></li>
 	    			<li class="landing-option"><img src="img/resources/beneficios.png"><span>Beneficios</span></li>
 	    			<li class="landing-option"><img src="img/resources/kids.png"><span>Knx kids</span></li>
 	    			<li class="landing-option"><img src="img/resources/comunidad.png"><span>Comunidad</span></li>
@@ -191,14 +195,14 @@
 					<div class="title" id="title-checkout"></div>
 					<div class="hour" id="hour-checkout"></div>&nbsp;&nbsp;
 					<div class="location" id="location-checkout"></div>
-					<div class="price">Precio: $<span id="price-checkout"></span></div>
+					<div class="price">Precio por entrada: $<span id="price-checkout"></span></div>
 				</div>
 				<form class="data-to-send" id="purchase-ticket-form">
 					<span class="personal-data">Datos personales</span>
-					<input type="text" name="name" id="user-name" value="" placeholder="Nombre" data-corners="false"/>
+					<input type="text" name="name" id="user-name-form" value="" placeholder="Nombre" data-corners="false"/>
 					<input type="text" name="lastname" id="credit-card-code" value="" placeholder="Apellido" data-corners="false"/>
 					
-					<input type="text" name="dni" id="user-name" value="" placeholder="DNI" data-corners="false"/>
+					<input type="text" name="dni" id="dni" value="" placeholder="DNI" data-corners="false"/>
 					<input type="text" name="phone-number" id="phone-number" value="" placeholder="Celular" data-corners="false"/>
 
 					<div class="mail">
@@ -225,7 +229,18 @@
 						
 						<span class="personal-data">Entradas</span>
 						<!-- ESTO TIENE QUE SER UN SELECT!!!! -->
-						<input type="text" name="amount" id="amount" value="" placeholder="Cantidad" data-corners="false"/>
+						<select name="select-native-2" id="amount" data-mini="true"  data-theme="b">
+						        <option value="1">1</option>
+						        <option value="2">2</option>
+						        <option value="3">3</option>
+						        <option value="4">4</option>
+						        <option value="5">5</option>
+						        <option value="5">6</option>
+						        <option value="7">7</option>
+						        <option value="8">8</option>
+						        <option value="9">9</option>
+						        <option value="10">10</option>
+						</select>
 						<label class="location">&nbsp;&nbsp;&nbsp;Ubicaci&oacute;n sin numerar</label>
 						<label>
 					        <input data-theme="b" type="radio" name="access-radio" value="retirar" checked>Retirar
@@ -242,9 +257,6 @@
 		<!-- START PAGE 5 -->
 
 	    <div class="app-page fifth-page jqm-demos ui-responsive-panel" id="page-5" data-role="page">
-		    <!--<div data-role="header" data-enhance="false" data-theme="b" style="height: 25px;">
-		    	<img class="notification" src="img/resources/logo_cck.png" alt="icon"/>
-			</div>-->
 			<div class="reserva-ticket">
 				<p>&iexcl;Tu reserva se ha efectuado exitosamente!</p>
 				<div id="qrcode"></div>
@@ -254,8 +266,8 @@
 					<div class="title" id="title-thanks"></div>
 					<div class="hour" id="hour-thanks"></div>&nbsp;&nbsp;
 					<div class="location" id="location-thanks"></div>
-					<!--<div class="location" id="title-thanks"></div>-->
-					<div class="price">Precio: <span id="price-thanks">$</span></div>
+					<div class="entries">Cantidad de entradas: <span id="entries-amount"></span></div>
+					<div class="price">Precio total: <span id="price-thanks">$</span></div>
 				</div>
 				<button data-theme="b" class="return" id="back_to_home"><a href="#page-2" data-transition="pop">Volver al inicio</a></button>
 			</div>
