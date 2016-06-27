@@ -3,7 +3,7 @@
 
 	//("mysql.hostinger.com.ar", "u341454716_knx", "982451n-", "u341454716_knx")
 	//if( $link = mysqli_connect("localhost", "m6000758_cckonex", "lu43seGIza", "m6000758_cckonex"))
-	if( $link = mysqli_connect("localhost", "m6000758_cckonex", "lu43seGIza", "m6000758_cckonex")){
+	if( $link = mysqli_connect("localhost", "root", "", "Knx")){
 		$consulta = "SELECT * FROM puntos_de_venta";	
 		$response = mysqli_query($link, $consulta);
 		//Converting data to json format

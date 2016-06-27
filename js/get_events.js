@@ -28,7 +28,7 @@ $(document).ready(function(){
                 console.log(formData);
 
                 $.ajax({
-                    url: "http://blinkapp.com.ar/app_php/sign_in.php",
+                    url: "php/sign_in.php",
                     type: "POST",
                     data: formData
                 }).done(function( message ) {
@@ -57,7 +57,7 @@ $(document).ready(function(){
 
                 var formData = $("#loginform").serialize();
                 $.ajax({
-                    url: "http://blinkapp.com.ar/app_php/connection.php",
+                    url: "php/connection.php",
                     type: "POST",
                     cache: false,
                     data: formData,
@@ -140,7 +140,7 @@ $(document).ready(function(){
         console.log(user_actual);
         $.ajax({
             //"http://blinkapp.com.ar/app_php/listaeventos.php"
-            url: "http://blinkapp.com.ar/app_php/listaeventos.php",
+            url: "php/listaeventos.php",
             type: "POST",
             dataType: "json"
         }).done(function( resultados ) {
@@ -256,7 +256,7 @@ $(document).ready(function(){
             //Checkout information
             $('#buy_tickets').on('click', function(){
                 refreshDataCheckout();
-                $('#mail').val(user_actual.mail);
+                $('#mail-form').val(user_actual.mail);
                 $('#user-name-form').focus();
                 setCheckoutEvent(next_event);
             })
@@ -265,18 +265,21 @@ $(document).ready(function(){
                 $('#title-thanks').append(next_event.event_name);
                 $('#hour-thanks').append(next_event.day + '-' + next_event.month + '   ' + next_event.hour);
                 $('#location-thanks').append(next_event.location);
-                $('#price-thanks').append(next_event.price);
             }
 
             $('#thanks-redirect').on('click', function(){
+                refreshDataThanks();
                 setThanksEvent(next_event);
+                var price = next_event.price;
                 next_event = {};
                 var info = $('input[name=access-radio]:checked', '#purchase-ticket-form').val(); 
-                showThanksInformation(info);
+                showThanksInformation(info, $('#amount').val(), price);
             })
 
-            function showThanksInformation(data){
+            function showThanksInformation(data, amount, price){
                 console.log(data)
+                $('#price-thanks').text(price * amount);
+                $('#entries-amount').text(amount);
                 if (data == "acceder"){
                     console.log("qr");
                     $('#description-thanks').text("¡Presentá este código y accedé directamente al evento sin hacer fila!");
@@ -291,7 +294,7 @@ $(document).ready(function(){
                     $('#map').show();
                     
                     $.ajax({
-                            url: "http://blinkapp.com.ar/app_php/directions.php",
+                            url: "php/directions.php",
                             type: "POST",
                             dataType: "json"
                         }).done(function( direccion ) {

@@ -354,7 +354,8 @@
     display: block; }
     #page-5 .event-data .price span {
       color: #FFFFFF;
-      font-size: 17px; }
+      font-size: 17px;
+      font-weight: bold; }
 #page-5 .reserva-ticket {
   padding: 10px; }
   #page-5 .reserva-ticket p {
